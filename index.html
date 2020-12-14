@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>WHS Minecraft Server</title>
+	<link rel="icon" href="favicon-32x32.png" type="image/png"/>
+<style>
+	@font-face {
+		font-family: 'Minecraft';
+		src: url('Minecraft.ttf');
+	}
+
+	* {
+		margin: 0px;
+		padding: 0px;
+		border: none;
+	}
+
+	html, body {
+		height: 100%;
+	}
+
+	body {
+		font-family: Minecraft, Helvetica, sans-serif;
+		color: #e0e0e0;
+	}
+
+	#background {
+		background: url('background.png') repeat;
+		background-size: cover;
+		min-height: 100%;
+		width: 100%;
+	}
+
+	#content {
+		max-width: 550px;
+		margin: auto;
+
+		padding: 40px;
+	}
+
+	section {
+		margin-bottom: 40px;
+	}
+
+	h1 {
+		margin-bottom: 40px;
+	}
+
+	h3 {
+		color: #a0a0a0;
+		margin-bottom: 10px;
+	}
+
+	.mc-input {
+		padding: 8px;
+		border: 2px solid #a0a0a0;
+		background-color: black;
+
+		color: #e0e0e0;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	#overview-link {
+		transition: transform .15s;
+	}
+
+	#overview-link:hover {
+		transform: scale(1.1);
+	}
+
+	.footnote {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		text-align: right;
+
+		opacity: 0.1;
+		transition: opacity .15s;
+	}
+
+	.footnote:hover {
+		opacity: 0.3;
+	}
+
+	a:link {
+		color: inherit;
+	}
+</style>
+</head>
+<body>
+	<div id="background">
+		<main id="content">
+			<h1>WHS Minecraft Server</h1>
+			<section>
+				<h3>Join us!</h3>
+				<div class="mc-input">
+					whsminecraft.de
+				</div>
+			</section>
+			<section>
+				<h3>Unsere Weltkarte</h3>
+				<a href="./map">
+					<img id="overview-link" src="mc_map_zoom_3.png"/>
+				</a>
+			</section>
+		</main>
+		<footer class="footnote">
+			<a href="mailto:ruben.ollesch@protonmail.com">ruben.ollesch@protonmail.com</a>
+		</footer>
+	</div>
+</body>
+</html>
