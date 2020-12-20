@@ -66,6 +66,34 @@
 		color: #e0e0e0;
 	}
 
+	.mc-button {
+		text-align: center;
+	}
+
+	.mc-button > button {
+		display: inline-block;
+		cursor: pointer;
+		padding: 11px 40px 8px 40px;
+		font-family: inherit;
+		color: inherit;
+		font-size: 22px;
+		text-shadow: 2px 2px #00000080;
+
+		border: 2px solid #aaaaaa;
+		border-bottom: 4px solid #00000060;
+		border-right: 2px solid #00000060;
+		background-image: url('button_texture.png');
+
+		outline: 2px solid black;
+	}
+
+	.mc-button > button:hover {
+		outline: 2px solid white;
+	}
+
+
+
+
 	img {
 		max-width: 100%;
 		max-height: 100%;
@@ -96,6 +124,21 @@
 	a:link {
 		color: inherit;
 	}
+
+	.mc-tooltip {
+		position: fixed;
+
+		transition: opacity 0.5s;
+
+		padding: 5px;
+		font-color: white;
+		background-color: #100010F0;
+		border: 2px #180034F5 solid;
+		box-shadow:	2px 0px 0px 0px #100010F0,
+				0px 2px 0px 0px #100010F0,
+				-2px 0px 0px 0px #100010F0,
+				0px -2px 0px 0px #100010F0;
+	}
 </style>
 </head>
 <body>
@@ -106,6 +149,11 @@
 				<h3>Join us!</h3>
 				<div class="mc-input">
 					whsminecraft.de
+				</div>
+				<div class="mc-button">
+					<button onclick="addressClick(this);" data-tooltip="Adresse kopiert! Du kannst sie nun im Spiel einfügen.">
+						Server beitreten
+					</button>
 				</div>
 			</section>
 			<section>
@@ -119,5 +167,46 @@
 			<a href="mailto:ruben.ollesch@protonmail.com">ruben.ollesch@protonmail.com</a>
 		</footer>
 	</div>
+	<script>
+		function addressClick(btn) {
+			const t = document.createElement('textarea');
+			t.innerText = 'whsminecraft.de';
+			document.body.appendChild(t);
+			t.select();
+			document.execCommand('copy');
+			document.body.removeChild(t);
+
+			showTooltip(btn);
+		}
+
+		function showTooltip(elm) {
+			const t = document.createElement('div');
+			t.classList.add('mc-tooltip');
+			t.innerText = elm.getAttribute('data-tooltip');
+			document.body.appendChild(t);
+	
+			function setPos(x, y) {
+				t.style.top = (-15 + y) + 'px';
+				t.style.left = (15 + x) + 'px';
+			}
+		
+			// Set initial pos to element when using touch screen device
+			if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+				const rect = elm.getBoundingClientRect();
+				setPos(rect.x, rect.y);
+			}
+			
+			document.body.addEventListener('mousemove', function(e) {
+				setPos(e.clientX, e.clientY);
+			});
+
+			setTimeout(function() {
+				t.style.opacity = 0;
+				setTimeout(function() {
+					document.body.removeChild(t);
+				}, 1000);
+			}, 3000);
+		}
+	</script>
 </body>
 </html>
