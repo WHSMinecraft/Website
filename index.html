@@ -6,48 +6,48 @@
 	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
 	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
 	<title>WHS Minecraft Server</title>
-	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	<link rel="stylesheet" href="style.css"/>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-	<div id="background">
-		<main id="content">
-			<h1>WHS Minecraft Server</h1>
-			<section>
-				<h3>Spiel mit!</h3>
-				<div class="mc-input">
-					whsminecraft.de
-				</div>
-				<div class="mc-button">
-					<button onclick="addressClick(this);" data-tooltip="Adresse kopiert! Du kannst sie nun im Spiel einfügen.">
-						Server beitreten
-					</button>
-				</div>
-			</section>
-			<section>
-				<h3>Unsere Weltkarte</h3>
-				<a href="./map">
-					<img id="overview-link" src="/assets/mc_map.png"/>
-				</a>
-			</section>
-			<section>
-				<h3>Team</h3>
-				<div class="listing">
-					<figure>
-						<img src="/assets/playerheads/Trollesch.png"/>
-						<figcaption>Trollesch</figcaption>
-					</figure>
-					<figure>
-						<img src="/assets/playerheads/DReamPac.png"/>
-						<figcaption>DReamPac</figcaption>
-					</figure>
-				</div>
-			</section>
-		</main>
-		<footer class="footnote">
-			<a href="mailto:webmaster@whsminecraft.de">webmaster@whsminecraft.de</a>
-		</footer>
-	</div>
+	<header>
+		<img src="/assets/Title.png"/>
+	</header>
+	<main>
+		<section>
+			<h3>Spiel mit!</h3>
+			<div class="mc-input">
+				whsminecraft.de
+			</div>
+			<div class="mc-button">
+				<button onclick="addressClick(this);" data-tooltip="Adresse kopiert! Du kannst sie nun im Spiel einfügen.">
+					Server beitreten
+				</button>
+			</div>
+		</section>
+		<section>
+			<h3>Unsere Weltkarte</h3>
+			<a href="./map">
+				<img id="overview-link" src="/assets/mc_map.png"/>
+			</a>
+		</section>
+		<section>
+			<h3>Team</h3>
+			<div class="listing">
+				<figure>
+					<img src="/assets/playerheads/Trollesch.png"/>
+					<figcaption>Trollesch</figcaption>
+				</figure>
+				<figure>
+					<img src="/assets/playerheads/DReamPac.png"/>
+					<figcaption>DReamPac</figcaption>
+				</figure>
+			</div>
+		</section>
+	</main>
+	<footer class="footnote">
+		<a href="mailto:webmaster@whsminecraft.de">webmaster@whsminecraft.de</a>
+	</footer>
 	<script>
 		function addressClick(btn) {
 			const t = document.createElement('textarea');
