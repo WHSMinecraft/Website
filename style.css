@@ -1,6 +1,38 @@
 @font-face {
 	font-family: 'Minecraft';
-	src: url('/assets/fonts/Minecraft.ttf');
+	src: url('/assets/fonts/MinecraftRegular.otf');
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/MinecraftBold.otf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/MinecraftItalic.otf');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/MinecraftBoldItalic.otf');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/MinecraftItalic.otf');
+	font-style: oblique;
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/MinecraftBoldItalic.otf');
+	font-weight: bold;
+	font-style: oblique;
 }
 
 * {
@@ -16,6 +48,7 @@ html, body {
 body {
 	font-family: Minecraft, Helvetica, sans-serif;
 	color: #e0e0e0;
+	font-weight: regular;
 	line-height: 1.4em;
 	background-color: black;
 	background-image: url('/assets/mc_dirt_background.png');
