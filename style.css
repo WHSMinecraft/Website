@@ -1,3 +1,4 @@
+/* ============ Fonts ============ */
 @font-face {
 	font-family: 'Minecraft';
 	src: url('/assets/fonts/MinecraftRegular.otf');
@@ -35,11 +36,13 @@
 	font-style: oblique;
 }
 
+/* ============ Global ============ */
 * {
 	margin: 0px;
 	padding: 0px;
 	border: none;
 	font-weight: inherit;
+	font-family: inherit;
 	text-shadow: inherit;
 	line-height: inherit;
 	font-size: inherit;
@@ -49,20 +52,29 @@
 	color: inherit;
 }
 
+body {
+	font-family: Minecraft, Helvetica, sans-serif;
+	font-weight: regular;
+	color: #e0e0e0;
+	text-shadow: 0.11em 0.11em #303030c0; /* 0.11em seems to be exactly one 'pixel' of the Minecraft font */
+	font-size: 20px;
+	line-height: 1.4em;
+
+	background-color: black;
+	background-image: url('/assets/mc_dirt_background.png');
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* ============ Page Layout ============ */
+
 html, body {
 	height: 100%;
 }
 
-body {
-	font-family: Minecraft, Helvetica, sans-serif;
-	color: #e0e0e0;
-	font-weight: regular;
-	line-height: 1.4em;
-	background-color: black;
-	background-image: url('/assets/mc_dirt_background.png');
-	font-size: 20px;
-	text-shadow: 0.11em 0.11em #303030c0; /* 0.11em seems to be exactly one 'pixel' of the Minecraft font */
-}
 
 header img {
 	display: block;
@@ -84,31 +96,18 @@ p {
 	margin-bottom: 10px;
 }
 
-p a {
-	font-style: italic;
-}
 
 h1 {
-	text-align: center;
-	font-size: larger;
 	margin-bottom: 40px;
 }
 
 h2 {
 	margin-bottom: 10px;
-	color: #f0f0f0;
 }
 
 h3 {
-	color: #a0a0a0;
 	margin-bottom: 10px;
 }
-
-code {
-	font-family: inherit;
-	color: white;
-}
-
 
 .center {
 	text-align: center;
@@ -129,6 +128,49 @@ code {
 	flex-basis: 0;
 }
 
+
+/* ============ Text styles============ */
+p a {
+	font-style: italic;
+}
+
+h1 {
+	text-align: center;
+	font-size: larger;
+}
+
+h2 {
+	color: #f0f0f0;
+}
+
+h3 {
+	color: #a0a0a0;
+}
+
+code {
+	color: white;
+	background-color: rgba(0,0,0,0.6);
+	box-shadow: 0 0 0.2em 0.2em rgba(0,0,0,0.6);
+}
+
+
+/* ============ Minecraft UI Elements ============ */
+
+.mc-tooltip {
+        position: fixed;
+
+        transition: opacity 0.5s;
+
+        padding: 5px;
+        font-color: white;
+        background-color: #100010F0;
+        border: 2px #180034F5 solid;
+        box-shadow:     2px 0px 0px 0px #100010F0,
+                        0px 2px 0px 0px #100010F0,
+                        -2px 0px 0px 0px #100010F0,
+                        0px -2px 0px 0px #100010F0;
+}
+
 .mc-input {
 	box-sizing: border-box;
 	width: 100%;
@@ -136,9 +178,6 @@ code {
 
 	margin-bottom: 0.8em;
 
-	font-family: inherit;
-	font-size: inherit;
-	text-shadow: inherit;
 	color: #e0e0e0;
 
 	padding: 0.3em 0.4em 0.3em 0.4em;
@@ -156,7 +195,6 @@ code {
 
 	text-align: center;
 	white-space: nowrap;
-	font-family: inherit;
 	color: white;
 
 	padding: 0.3em 0.8em 0.4em 0.8em;
@@ -175,64 +213,5 @@ code {
 .mc-button:focus,
 .mc-button:hover {
 	outline-color: white;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-#overview-link {
-	transition: transform .15s;
-}
-
-#overview-link:hover {
-	transform: scale(1.1);
-}
-
-.footnote {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        text-align: right;
-
-        opacity: 0.1;
-        transition: opacity .15s;
-}
-
-.footnote:hover {
-        opacity: 0.3;
-}
-
-a:link {
-        color: inherit;
-}
-
-.mc-tooltip {
-        position: fixed;
-
-        transition: opacity 0.5s;
-
-        padding: 5px;
-        font-color: white;
-        background-color: #100010F0;
-        border: 2px #180034F5 solid;
-        box-shadow:     2px 0px 0px 0px #100010F0,
-                        0px 2px 0px 0px #100010F0,
-                        -2px 0px 0px 0px #100010F0,
-                        0px -2px 0px 0px #100010F0;
-}
-
-
-.listing {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-}
-
-figcaption {
-        margin-top: 12px;
-        margin-bottom: 25px;
-        text-align: center;
 }
 

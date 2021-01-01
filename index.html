@@ -8,6 +8,41 @@
 	<title>WHS Minecraft Server</title>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" href="/style.css"/>
+<style>
+	#overview-link {
+		transition: transform .15s;
+	}
+
+	#overview-link:hover {
+		transform: scale(1.1);
+	}
+
+	.footnote {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		text-align: right;
+
+		opacity: 0.1;
+		transition: opacity .15s;
+	}
+
+	.footnote:hover {
+		opacity: 0.3;
+	}
+
+	.listing {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+	}
+
+	figcaption {
+		margin-top: 12px;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 	<header>
