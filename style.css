@@ -89,6 +89,8 @@ p a {
 }
 
 h1 {
+	text-align: center;
+	font-size: larger;
 	margin-bottom: 40px;
 }
 
