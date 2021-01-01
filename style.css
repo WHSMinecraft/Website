@@ -168,6 +168,8 @@ a {
 	outline: 0.10em solid black;
 }
 
+
+.mc-button:focus,
 .mc-button:hover {
 	outline-color: white;
 }
