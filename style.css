@@ -46,6 +46,7 @@
 	text-shadow: inherit;
 	text-decoration: inherit;
 	font-style: inherit;
+	color: inherit;
 }
 
 html, body {
@@ -83,6 +84,10 @@ p {
 	margin-bottom: 10px;
 }
 
+p a {
+	font-style: italic;
+}
+
 h1 {
 	margin-bottom: 40px;
 }
@@ -102,10 +107,6 @@ code {
 	color: white;
 }
 
-a {
-	font-style: italic;
-	color: white;
-}
 
 .center {
 	text-align: center;
