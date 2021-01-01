@@ -59,6 +59,8 @@ body {
 	line-height: 1.4em;
 	background-color: black;
 	background-image: url('/assets/mc_dirt_background.png');
+	font-size: 20px;
+	text-shadow: 0.11em 0.11em #303030c0; /* 0.11em seems to be exactly one 'pixel' of the Minecraft font */
 }
 
 header img {
