@@ -56,7 +56,7 @@ body {
 	font-family: Minecraft, Helvetica, sans-serif;
 	font-weight: regular;
 	color: #a0a0a0;
-	text-shadow: 0.11em 0.11em #303030c0; /* 0.11em seems to be exactly one 'pixel' of the Minecraft font */
+	text-shadow: 0.1em 0.1em #303030c0; /* 0.1em seems to be exactly one 'pixel' of the Minecraft font */
 	font-size: 20px;
 	line-height: 1.4em;
 
