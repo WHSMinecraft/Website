@@ -168,7 +168,7 @@ code {
         transition: opacity 0.5s;
 
         padding: 5px;
-        font-color: white;
+        color: white;
         background-color: #100010F0;
         border: 2px #180034F5 solid;
         box-shadow:     2px 0px 0px 0px #100010F0,
