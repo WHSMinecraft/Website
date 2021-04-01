@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mustache data.js templates/blog_list.mustache -p templates/blog_entry.mustache > news/index.html

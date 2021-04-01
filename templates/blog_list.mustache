@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
+	<meta name="description" content="Neuigkeiten, Ankündigungen und Klatsch & Tratsch auf dem WHS Minecraft Server"/>
+	<title>News</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/style.css"/>
+<style>
+	nav {
+		overflow: auto;
+		position: relative;
+		margin-bottom: 80px;
+		box-shadow:
+			inset 0 20px 8px -13px rgba(0, 0, 0, 0.8),
+			inset 0 -20px 8px -13px rgba(0, 0, 0, 0.8);
+	}
+
+	nav::before{
+		content: " ";
+		pointer-events: none; /* allow click-through */
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: -1;  /* below content */
+	}
+
+	nav a {
+		position: relative;
+		text-decoration: initial;
+		font-style: inherit;
+		color: inherit;
+		height: 5.5em;
+		margin: 0.5em;
+		display: flex;
+	}
+
+	@media(width < 550px) {
+		.entry-icon {
+			display: none;
+		}
+	}
+
+	.entry-icon {
+		flex-basis: 10em;
+		flex-shrink: 0;
+	}
+
+	.entry-icon img {
+		object-fit: cover;
+		object-position: left;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.entry-aside {
+		display: flex;
+		flex-direction: column;
+		padding-left: 10px;
+	}
+
+	.entry-aside-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.entry-aside-header h3 {
+		margin: 0;
+		color: white;
+	}
+
+	.entry-aside-desc {
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		font-style: italic;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<img src="/assets/Title.png"/>
+		</a>
+	</header>
+	<main>
+		<h1>News</h1>
+		<nav>
+			{{#blog_list}}
+				{{> blog_entry }}
+			{{/blog_list}}
+		</nav>
+	</main>
+</body>
+</html>
