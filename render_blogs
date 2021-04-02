@@ -5,8 +5,6 @@ HTML_DIR=webroot/news
 VIEW_DIR=_views/tmp
 SCRIPT_DIR=_views
 
-echo Cleaning old views...
-rm -rf $VIEW_DIR/*
 
 echo Generating views...
 mkdir -p $VIEW_DIR/news
