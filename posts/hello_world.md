@@ -1,6 +1,6 @@
 ---
 Title:	Hello World
-Author:	Ruben Ollesch
+Author:	Ruben
 Date:	30.12.2020
 ---
 <img src="/content/advancement_stone_age.png"/>

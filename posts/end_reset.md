@@ -1,6 +1,6 @@
 ---
 Title:	Reset des Endes
-Author:	Ruben Ollesch & Der Weihnachtsmann
+Author:	Ruben
 Date:	19.3.2021
 Thumbnail:	/content/end_reset_thumb.png
 ---
