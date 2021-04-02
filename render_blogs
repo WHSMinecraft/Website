@@ -1,34 +1,38 @@
 #!/bin/bash
 
-MD_DIR=news_articles
-HTML_DIR=news
+MD_DIR=_posts
+HTML_DIR=webroot/news
+VIEW_DIR=_views/tmp
+SCRIPT_DIR=_views
 
+echo Cleaning old views...
+rm -rf $VIEW_DIR/*
 
 echo Generating views...
-for b in $MD_DIR/*.md; do
-	echo "Parsing data for $b...";
-	./generateBlogView.js "$b" > "${b}.json";
-	echo "Done with $b."
+mkdir -p $VIEW_DIR/news
+for b in $MD_DIR/*; do
+	basename=${b##*/}
+	echo "Generating view for "$basename"...";
+	"$SCRIPT_DIR/generateBlogView.js" "$b" > "$VIEW_DIR/news/$basename.json";
 done;
 
+
 echo Generating HTML files...
-for b in $MD_DIR/*.json; do
-	echo "Generating html for $b...";
+for b in $VIEW_DIR/news/*; do
 	basename=${b##*/}
 	noext=${basename%%.*}
 	outputfile="$HTML_DIR/$noext/index.html";
-	echo "Generating to $outputfile..."
+	echo "Generating HTML for $basename...";
 	mkdir -p "$HTML_DIR/$noext"
-	mustache "$b" templates/blog_page.mustache > "$outputfile";
-	echo "Done with $b."
+	mustache "$b" _templates/blog_page.mustache > "$outputfile";
 done;
 
 
 echo Generating blog list...
-./generateBlogListView.js > bloglist.json
-mustache bloglist.json templates/blog_list.mustache -p templates/blog_entry.mustache > news/index.html
+"$SCRIPT_DIR/generateBlogListView.js" > "$VIEW_DIR/bloglist.json"
+mustache "$VIEW_DIR/bloglist.json" _templates/blog_list.mustache -p _templates/blog_entry.mustache > "$HTML_DIR/index.html"
 
 
 echo Adding latest blog entry to homepage...
-./generateBlogLatestEntryView.js > latestblog.json
-mustache latestblog.json templates/homepage.mustache -p templates/blog_entry.mustache > index.html
+"$SCRIPT_DIR/generateBlogLatestEntryView.js" > "$VIEW_DIR/latestblog.json"
+mustache "$VIEW_DIR/latestblog.json" _templates/homepage.mustache -p _templates/blog_entry.mustache > "webroot/index.html"

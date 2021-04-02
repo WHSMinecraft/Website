@@ -7,6 +7,6 @@ var glob = require('glob');
 
 
 
-const filecontent = JSON.parse(fs.readFileSync('bloglist.json', 'utf8'));
+const filecontent = JSON.parse(fs.readFileSync('_views/tmp/bloglist.json', 'utf8'));
 
 console.log(JSON.stringify(filecontent.blog_list[0]));
