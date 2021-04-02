@@ -7,7 +7,7 @@ var glob = require('glob');
 
 
 
-glob('_views/tmp/news/*', {}, (err, files) => {
+glob('_views/news/*', {}, (err, files) => {
 	var blog_list = files.map((blog_file, idx) => {
 		const data = fs.readFileSync(blog_file, 'utf8');
 		return JSON.parse(data);
