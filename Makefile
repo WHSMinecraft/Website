@@ -8,9 +8,10 @@ SRC_FILES := $(filter-out webroot/map, $(SRC_FILES))
 
 PARTIALS := _templates/blog_entry.mustache
 
+
 POSTVIEWDIR := _views/news
 
-POSTS := $(wildcard _posts/*)
+POSTS := $(wildcard posts/*)
 POSTS := $(basename $(POSTS))
 POSTS := $(notdir $(POSTS))
 POSTVIEWS := $(addsuffix .json, $(POSTS))
@@ -49,14 +50,14 @@ $(POSTVIEWS): | $(POSTVIEWDIR)
 $(POSTVIEWDIR):
 	mkdir $(POSTVIEWDIR)
 
-$(POSTVIEWDIR)/%.json: _posts/%.md
-	_views/generateBlogView.js $< > $@
+$(POSTVIEWDIR)/%.json: posts/%.md
+	_tools/generateBlogView.js $< > $@
 
 _views/bloglist.json: $(POSTVIEWS)
-	_views/generateBlogListView.js > $@
+	_tools/generateBlogListView.js > $@
 
 _views/latestblog.json: _views/bloglist.json
-	_views/generateBlogLatestEntryView.js > $@
+	_tools/generateBlogLatestEntryView.js > $@
 
 # HTMLs
 webroot/news/%/index.html: $(POSTVIEWDIR)/%.json
