@@ -1,15 +1,14 @@
-
-			<a href="./{{ url }}">
-				<div class="entry-icon">
-					<img src="{{ image }}"/>
-				</div>
-				<div class="entry-aside">
-					<div class="entry-aside-header">
-						<h3>{{ title }}</h3>
-						<time>{{ date }}</time>
-					</div>
-					<div class="entry-aside-desc" data-multiline-ellipsis>
-					{{ description }}
-					</div>
-				</div>
-			</a>
+<a class="news_entry" href="/news/{{ url }}">
+	<div class="entry-icon">
+		<img src="{{ thumbnail }}"/>
+	</div>
+	<div class="entry-aside">
+		<div class="entry-aside-header">
+			<h3>{{ title }}</h3>
+			<time>{{ date }}</time>
+		</div>
+		<div class="entry-aside-desc" data-multiline-ellipsis>
+		{{ description }}
+		</div>
+	</div>
+</a>

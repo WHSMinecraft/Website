@@ -4,11 +4,10 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
-	<meta name="description" content="Neuigkeiten, Ankündigungen und Klatsch & Tratsch auf dem WHS Minecraft Server"/>
-	<title>News</title>
+	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
+	<title>{{ title }}</title>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" href="/style.css"/>
-	<link rel="stylesheet" href="/blog_style.css"
 </head>
 <body>
 	<header>
@@ -17,12 +16,12 @@
 		</a>
 	</header>
 	<main>
-		<h1>News</h1>
-		<nav>
-			{{#blog_list}}
-				{{> blog_entry }}
-			{{/blog_list}}
-		</nav>
+		<h1>{{ title }}</h1>
+		{{{ content }}}
+		<footer>
+			<address>{{ author }}</address>
+			<time>{{ date }}</time>
+		</footer>
 	</main>
 </body>
 </html>

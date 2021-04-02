@@ -1,3 +1,34 @@
 #!/bin/bash
 
-mustache data.js templates/blog_list.mustache -p templates/blog_entry.mustache > news/index.html
+MD_DIR=news_articles
+HTML_DIR=news
+
+
+echo Generating views...
+for b in $MD_DIR/*.md; do
+	echo "Parsing data for $b...";
+	./generateBlogView.js "$b" > "${b}.json";
+	echo "Done with $b."
+done;
+
+echo Generating HTML files...
+for b in $MD_DIR/*.json; do
+	echo "Generating html for $b...";
+	basename=${b##*/}
+	noext=${basename%%.*}
+	outputfile="$HTML_DIR/$noext/index.html";
+	echo "Generating to $outputfile..."
+	mkdir -p "$HTML_DIR/$noext"
+	mustache "$b" templates/blog_page.mustache > "$outputfile";
+	echo "Done with $b."
+done;
+
+
+echo Generating blog list...
+./generateBlogListView.js > bloglist.json
+mustache bloglist.json templates/blog_list.mustache -p templates/blog_entry.mustache > news/index.html
+
+
+echo Adding latest blog entry to homepage...
+./generateBlogLatestEntryView.js > latestblog.json
+mustache latestblog.json templates/homepage.mustache -p templates/blog_entry.mustache > index.html

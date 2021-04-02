@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
+	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
+	<title>WHS Minecraft Server</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/style.css"/>
+	<link rel="stylesheet" href="/blog_style.css"/>
+<style>
+	#overview-link {
+		transition: transform .15s;
+	}
+
+	#overview-link:hover {
+		transform: scale(1.1);
+	}
+
+	.footnote {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		text-align: right;
+
+		opacity: 0.1;
+		transition: opacity .15s;
+	}
+
+	.footnote:hover {
+		opacity: 0.3;
+	}
+
+	.listing {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+	}
+
+	figcaption {
+		margin-top: 12px;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	.clock {
+		display: flex;
+		justify-content: space-evenly;
+
+	}
+
+	.digit {
+		pointer-events: none;
+
+		font-size:2.5em;
+		text-align: center;
+
+		height: 0.8em;
+		width: 0.8em;
+		padding: 0.2em;
+		margin: 0.1em;
+		line-height: 0.85em;
+
+		outline: none;
+		box-shadow:
+			inset 0 0.10em 0 0 #ffffff60,
+			inset 0.10em 0 0 0 #ffffff60,
+			inset -0.10em 0 0 0 #00000040,
+			inset 0 -0.10em 0 #00000040;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<img src="/assets/Title.png"/>
+		</a>
+	</header>
+	<main>
+		<section>
+			<h3>Spiel mit!</h3>
+			<input class="mc-input" readonly value="whsminecraft.de"/>
+			<div class="center">
+				<button class="mc-button" onclick="addressClick(this);" data-tooltip="Adresse kopiert! Du kannst sie nun im Spiel einfügen.">
+					Server beitreten
+				</button>
+			</div>
+		</section>
+		<section>
+			<h3>Unsere Weltkarte</h3>
+			<a href="./map">
+				<img id="overview-link" src="/assets/mc_map.png"/>
+			</a>
+		</section>
+		<section>
+			<h3>Ankündigungen</h3>
+			<nav>
+				{{> blog_entry}}
+				<a class="news_more" href="/news">
+					<span class="news_more_symbol">&#x25bc; Mehr</span>
+				</a>
+			</nav>
+		</section>
+		<section>
+			<h3>Links</h3>
+			<div class="flex">
+				<a class="mc-button" href="/about">
+					Über den Server
+				</a>
+				<div class="mc-button-gap"></div>
+			</div>
+		</section>
+		<section>
+			<h3>Team</h3>
+			<div class="listing">
+				<figure>
+					<img src="/assets/playerheads/Trollesch.png"/>
+					<figcaption>Trollesch</figcaption>
+				</figure>
+				<figure>
+					<img src="/assets/playerheads/DReamPac.png"/>
+					<figcaption>DReamPac</figcaption>
+				</figure>
+			</div>
+		</section>
+	</main>
+	<footer class="footnote">
+		<a href="mailto:webmaster@whsminecraft.de">webmaster@whsminecraft.de</a>
+	</footer>
+	<script>
+		function addressClick(btn) {
+			const t = document.createElement('textarea');
+			t.innerText = 'whsminecraft.de';
+			document.body.appendChild(t);
+			t.select();
+			document.execCommand('copy');
+			document.body.removeChild(t);
+
+			showTooltip(btn);
+		}
+
+		function showTooltip(elm) {
+			const t = document.createElement('div');
+			t.classList.add('mc-tooltip');
+			t.innerText = elm.getAttribute('data-tooltip');
+			document.body.appendChild(t);
+	
+			function setPos(x, y) {
+				t.style.top = (-15 + y) + 'px';
+				t.style.left = (15 + x) + 'px';
+			}
+		
+			// Set initial pos to element when using touch screen device
+			if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+				const rect = elm.getBoundingClientRect();
+				setPos(rect.x, rect.y);
+			}
+			
+			document.body.addEventListener('mousemove', function(e) {
+				setPos(e.clientX, e.clientY);
+			});
+
+			setTimeout(function() {
+				t.style.opacity = 0;
+				setTimeout(function() {
+					document.body.removeChild(t);
+				}, 1000);
+			}, 3000);
+		}
+
+		function createCountdown() {
+			const clock = document.createElement('div');
+			clock.classList.add('clock');
+			for (let i = 0; i < 8; i++) {
+				const digit = document.createElement('div');
+				digit.classList.add('mc-button', 'digit');
+				clock.appendChild(digit);
+			}
+
+			clock.children[2].innerText = ':';
+			clock.children[5].innerText = ':';
+
+
+
+			const m = document.querySelector('.preview');
+			m.parentElement.insertBefore(clock, m);
+
+			function updateCountdown() {
+				const end = new Date(2021,0,8,20);
+				const diff = (end - Date.now()) / 1000;
+				const seconds = Math.floor(diff % 60);
+				const minutes = Math.floor((diff / 60) % 60);
+				const hours = Math.floor((diff / 3600) % 24);
+
+				console.log(hours, minutes, seconds);
+
+				clock.children[0].innerText = 0;
+				clock.children[1].innerText = hours;
+				clock.children[3].innerText = Math.floor(minutes / 10);
+				clock.children[4].innerText = (minutes % 10);
+				clock.children[6].innerText = Math.floor(seconds / 10);
+				clock.children[7].innerText = (seconds % 10);
+				
+			}
+			updateCountdown();			
+			setInterval(updateCountdown, 1000);
+		}
+	</script>
+</body>
+</html>

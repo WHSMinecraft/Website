@@ -84,8 +84,8 @@ header img {
 main {
 	max-width: 550px;
 	margin: auto;
-
-	padding: 40px;
+	margin: 3em auto;
+	padding: 0.3em;
 }
 
 section {
@@ -138,6 +138,7 @@ h3 {
 /* ============ Text styles============ */
 p a {
 	font-style: italic;
+	color: #f0f0f0;
 }
 
 h1 {
