@@ -1,7 +1,8 @@
 .PHONY=all debug clean mrproper
 
-#DOC_ROOT=/srv/http/whsminecraft.de/
-DOC_ROOT=/home/ruben/whsminecraft.de/
+
+DOC_ROOT=/srv/http/whsminecraft.de/
+
 
 SRC_FILES := $(wildcard webroot/*)
 SRC_FILES := $(filter-out webroot/map, $(SRC_FILES))
