@@ -55,7 +55,7 @@
 body {
 	font-family: Minecraft, Helvetica, sans-serif;
 	font-weight: regular;
-	color: #a0a0a0;
+	color: #b0b0b0;
 	text-shadow: 0.1em 0.1em #303030c0; /* 0.1em seems to be exactly one 'pixel' of the Minecraft font */
 	font-size: 20px;
 	line-height: 1.4em;
@@ -160,6 +160,16 @@ code {
 	box-shadow: 0 0 0.2em 0.2em rgba(0,0,0,0.6);
 }
 
+
+figure {
+	margin: 1em 0;
+}
+
+figure figcaption {
+	color: #808080;
+	font-style: italic;
+	font-size: smaller;
+}
 
 /* ============ Minecraft UI Elements ============ */
 
