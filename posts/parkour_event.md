@@ -2,6 +2,7 @@
 Title:	Parkour Event
 Author:	Silas & Ruben
 Thumbnail:	/content/parkour/side.png
+Date:	16.4.2021
 ---
 
 <section>
@@ -29,7 +30,7 @@ Zusätzlich dazu erhält die Person, die den Parkour in der kürzesten Zeit durc
 </section>
 <section>
 <p>
-Hab keine Sorge, wenn du noch keine Erfahrung im Parkour habt: Du hast einen Monat Zeit und unbegrenzte Anläufe.
+Hab keine Sorge, wenn dir noch die Erfahrung im Parkour fehlt: Du hast einen Monat Zeit und unbegrenzte Anläufe.
 </p>
 <p>
 Unter dieser Adresse kannst du dich verbinden: <code>parkour.whsminecraft.de</code>
