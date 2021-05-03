@@ -1,0 +1,18 @@
+{
+  "name": "website-whsminecraft.de",
+  "version": "1.0.0",
+  "description": "Website for the WHS Minecraft Server",
+  "dependencies": {},
+  "devDependencies": {
+    "node-html-parser": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WHSMinecraft/Website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WHSMinecraft/Website/issues"
+  },
+  "license": "ISC",
+  "homepage": "https://whsminecraft.de"
+}
