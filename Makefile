@@ -40,7 +40,7 @@ clean:
 mrproper: clean
 	@echo Deleting generated HTMLs...
 	rm -rf $(dir $(POSTS))
-	rm -rf webroot/news/index.html
+	rm -rf webroot/news/
 	rm -rf webroot/index.html
 
 
@@ -49,7 +49,7 @@ mrproper: clean
 $(POSTVIEWS): | $(POSTVIEWDIR)
 
 $(POSTVIEWDIR):
-	mkdir $(POSTVIEWDIR)
+	mkdir -p $(POSTVIEWDIR)
 
 $(POSTVIEWDIR)/%.json: posts/%.md
 	_tools/generateBlogView.js $< > $@
@@ -67,6 +67,7 @@ webroot/news/%/index.html: $(POSTVIEWDIR)/%.json
 
 
 webroot/news/index.html: _views/bloglist.json
+	mkdir -p $(dir $@)
 	mustache $< _templates/blog_list.mustache -p $(PARTIALS) > $@
 
 
