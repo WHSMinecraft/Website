@@ -1,0 +1,13 @@
+Setup:
+Install make
+Install nodejs
+Install npm
+
+
+# sudo npm i -g mustache
+$ npm i node-html-parser
+
+
+$ make
+# make publish
+
