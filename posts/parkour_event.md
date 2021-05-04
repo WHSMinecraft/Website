@@ -11,13 +11,13 @@ Da die Vorlesungen wieder begonnen haben und wir Langeweile natürlich nicht zul
 haben wir uns etwas ausgedacht.
 </p>
 <p>
-Für einen Monat, vom 16. Freitag bis zum 16. Mai, könnt ihr euch auf unserem neuen Parkourserver um die besten Zeiten schlagen.
+Für einen Monat, vom 16. April bis zum 16. Mai, könnt ihr euch auf unserem neuen Parkourserver um die besten Zeiten schlagen.
 </p>
 </section>
 <figure>
 	<img src="/content/parkour/start.png"/>
 	<figcaption>
-	Erklimmt die Spirale an die Spitze der Welt, und dann auf die Spitze der Bestenliste!
+	Erklimmt die Spirale an die Spitze der Welt, und dann die Spitze der Bestenliste!
 	</figcaption>
 </figure>
 <section>
@@ -37,10 +37,10 @@ Unter dieser Adresse kannst du dich verbinden: <code>parkour.whsminecraft.de</co
 </p>
 </section>
 <figure>
-<img src="/content/parkour/path.png"/>
-<figcaption>Einer der vielen Abschnitte der Karte. Hier ist jede Landschaft wahrscheinlich dreimal vertreten.</figcaption>
+	<img src="/content/parkour/path.png"/>
+	<figcaption>Einer der vielen Abschnitte der Karte. Hier ist jede Landschaft wahrscheinlich dreimal vertreten.</figcaption>
 </figure>
 <figure>
-<img src="/content/parkour/side.png"/>
-<figcaption>Noch eine Seitenansicht der Karte 'Parkour Spiral'</figcaption>
+	<img src="/content/parkour/side.png"/>
+	<figcaption>Noch eine Seitenansicht der Karte 'Parkour Spiral'</figcaption>
 </figure>
