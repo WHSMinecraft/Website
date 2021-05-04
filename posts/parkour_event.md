@@ -44,3 +44,31 @@ Unter dieser Adresse kannst du dich verbinden: <code>parkour.whsminecraft.de</co
 	<img src="/content/parkour/side.png"/>
 	<figcaption>Noch eine Seitenansicht der Karte 'Parkour Spiral'</figcaption>
 </figure>
+<section>
+<h2>Teilnahmebedingungen nochmal genau</h2>
+<p>
+Jeder darf am Event teilnehmen und erhält nach Ende ein In-Game Item als Zeichen der Teilnahme.
+</p>
+<p>
+Nur Studenten und ehemalige Studenten der Wesfälischen Hochschule können den Preis für den ersten Platz (30€ Steam Gutschein) gewinnen.
+</p>
+<p>
+Dafür muss der Spieler am 16.5.2021 23:59 an erster Stelle der Rangliste stehen.
+</p>
+<p>
+Spieler, die andere auch nach Ermahnung sabotieren werden vom Event und von dem Spielserver ausgeschlossen.
+</p>
+<p>
+Spieler, die ihren Rang durch Betrug erzielen, z.B. durch Ausnutzen etwaiger Spiel- oder Programmfehler, werden ebenfalls ausgeschlossen.
+</p>
+<h2>Datenschutz</h2>
+<p>
+Die Rangliste wird nach Ende des Events auf dieser Website veröffentlicht. Diese enthält erreichten Rang, in-game Name und Zeit, und beinhaltet damit keine persönlichen Informationen.
+</p>
+<p>
+Der Gewinner (Erster Platz) muss nachweisen, dass er (ehemaliger) Student der Westfälischen Hochschule ist. Alle dafür erforderlichen Informationen werden weder gespeichert noch an Dritte weitergegeben.
+</p>
+<p>
+Kann der Spieler auf dem ersten Platz dies nicht nachweisen, wird die Rangliste nach unten abgearbeitet, bis ein Sieger gefunden wird.
+</p>
+</section>
