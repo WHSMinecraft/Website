@@ -33,3 +33,13 @@ lassen neben ihrem verottetem Fleisch nun auch echte, originale und wunderschön
 <p>
 Mit einer industriellen Massenfarm direkt in der Wüste Gobi sollte die Knappheit nun der Vergangenheit angehören.
 </p>
+</section>
+<section>
+<h2>Update</h2>
+<p>
+Dass ich nicht beachtet habe, dass Wüstenzombies nur an der Oberfläche unter der Sonne spawnen, hat das Bauen einer effizienten Farm erschwert.
+</p>
+<p>
+Daher wurde neben den Drops zusätzlich ihr Spawnverhalten geändert: Im Bereich von Wüstentempeln spawnen nun exklusiv nur Wüstenzombies, unabhängig davon, ob sie ein Dach über dem Kopf haben oder nicht.
+</p>
+</section>
