@@ -2,7 +2,7 @@
 Title:	Ein Monat Parkour!
 Author:	Ruben
 Date:	16.5.2021
-Thumbnail: /content/parkour_finish.png
+Thumbnail: /content/parkour_finish_thumb.png
 ---
 
 <section>
