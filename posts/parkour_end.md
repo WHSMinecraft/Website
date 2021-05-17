@@ -139,7 +139,7 @@ Vielleicht bist du einer davon, dann kannst du dich jetzt in folgender Liste wie
 </section>
 <section>
 <p>
-Wenn dies der Fall ist, kannst du dich schonmal freuen: Im Laufe dieser Woche kannst du auf unserem Hauptserver, <code>whsminecraft.de</code>, dir eine Trophäe abholen.
+Wenn dies der Fall ist, kannst du auf unserem Hauptserver, <code>whsminecraft.de</code>, dir eine Trophäe abholen.
 </p>
 <p>
 Damit kannst du den nicht-corona-noobs im nächsten Jahr zeigen, das du ein Veteran dieses Servers bist.
