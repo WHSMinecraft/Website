@@ -4,8 +4,8 @@ Install nodejs
 Install npm
 
 
+$ npm i 
 # sudo npm i -g mustache
-$ npm i node-html-parser
 
 
 $ make

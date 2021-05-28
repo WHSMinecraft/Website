@@ -2,8 +2,8 @@
   "name": "website-whsminecraft.de",
   "version": "1.0.0",
   "description": "Website for the WHS Minecraft Server",
-  "dependencies": {},
   "devDependencies": {
+    "glob": "^7.1.7",
     "node-html-parser": "^3.2.0"
   },
   "repository": {
