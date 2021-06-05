@@ -61,7 +61,7 @@ blog_file = blog_file.replace(path.extname(blog_file), '');
 const stat = fs.statSync(blog_file_path);
 let viewdata = {};
 viewdata['date'] = stat.birthtime.toLocaleDateString('de-DE');
-viewdata['url'] = blog_file;
+viewdata['url'] = '/news/' + blog_file + '/';
 viewdata['title'] = makeReadable(blog_file);
 
 viewdata = {
