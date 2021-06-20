@@ -43,16 +43,15 @@ publish:
 
 
 clean:
-	@echo Cleaning old views...
-	rm -rf $(POSTVIEWDIR)
-	rm -rf _views/*.json
-
-mrproper: clean
 	@echo Deleting generated HTMLs...
 	rm -rf $(dir $(POSTS))
 	rm -rf webroot/news/
 	rm -rf webroot/index.html
 
+mrproper: clean
+	@echo Cleaning old views...
+	rm -rf $(POSTVIEWDIR)
+	rm -rf _views/*.json
 
 
 # Views
