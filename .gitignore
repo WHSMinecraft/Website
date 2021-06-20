@@ -3,3 +3,4 @@ webroot/map
 webroot/news
 webroot/index.html
 _views
+server.pid

@@ -1,4 +1,4 @@
-.PHONY=all debug clean mrproper
+.PHONY=all debug clean mrproper dev-start dev-stop
 
 
 DOC_ROOT=/srv/http/whsminecraft.de/
@@ -26,6 +26,16 @@ POSTS := $(addsuffix /index.html, $(POSTS))
 
 # Default
 all: webroot/index.html webroot/news/index.html $(POSTS)
+
+
+dev-start: server.pid
+
+server.pid:
+	python -m http.server --directory webroot/ > /dev/null 2>&1 & echo $$! > server.pid
+
+dev-stop: server.pid
+	kill $$(cat $<) && rm $<
+
 
 publish:
 	@echo Copying files to live web server...
