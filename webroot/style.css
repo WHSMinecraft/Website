@@ -142,6 +142,10 @@ td {
 	flex-basis: 0;
 }
 
+.server-header {
+	display: flex;
+	justify-content: space-between;
+}
 
 /* ============ Text styles============ */
 p a {
