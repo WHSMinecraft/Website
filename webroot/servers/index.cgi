@@ -10,7 +10,7 @@ view = {
     'servers': [
         { 'name': 'Survival (Main)', 'url': 'whsminecraft.de', 'description': 'Die wichtigste Welt von uns. Eigentlich alles entscheidende läuft hier ab. Auch die Karte auf der Startseite bezieht sich auf diese Welt.' },
         { 'name': 'Creative', 'url': 'creative.whsminecraft.de', 'description': 'Eine Kopie der Survival-Welt mit Creative-Modus und Worldedit für alle. Gut geeignet um z.B. große Bauwerke zu planen.' },
-        { 'name': 'Beta', 'url': 'beta.whsminecraft.de', 'description': 'Hier werden Minecraft-Versionen getestet, die später auf den Hauptserver kommen. Aktuell läuft hier Version 1.17, da PaperMC noch nicht offiziell diese Version unterstützt.' }
+        { 'name': 'Test', 'url': 'test.whsminecraft.de', 'description': 'Hier werden Minecraft-Versionen getestet, die später auf den Hauptserver kommen. Aktuell läuft hier Version 1.17, da PaperMC noch nicht offiziell diese Version unterstützt.' }
     ]
 }
 
