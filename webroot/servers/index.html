@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
+	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
+	<title>WHS | Servers</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/style.css"/>
+
+	<link rel="preload" as="image" href="https://whsminecraft.de/assets/server_ping_0.png">
+	<link rel="preload" as="image" href="https://whsminecraft.de/assets/server_ping_1.png">
+	<link rel="preload" as="image" href="https://whsminecraft.de/assets/server_ping_2.png">
+	<link rel="preload" as="image" href="https://whsminecraft.de/assets/server_ping_3.png">
+	<link rel="preload" as="image" href="https://whsminecraft.de/assets/server_ping_4.png">
+<style>
+	@keyframes server-ping {
+		0%	{ background-image: url('https://whsminecraft.de/assets/server_ping_0.png'); }
+		12%	{ background-image: url('https://whsminecraft.de/assets/server_ping_1.png'); }
+		25%	{ background-image: url('https://whsminecraft.de/assets/server_ping_2.png'); }
+		37%	{ background-image: url('https://whsminecraft.de/assets/server_ping_3.png'); }
+		50%	{ background-image: url('https://whsminecraft.de/assets/server_ping_4.png'); }
+		62%	{ background-image: url('https://whsminecraft.de/assets/server_ping_3.png'); }
+		75%	{ background-image: url('https://whsminecraft.de/assets/server_ping_2.png'); }
+		87%	{ background-image: url('https://whsminecraft.de/assets/server_ping_1.png'); }
+		100%	{ background-image: url('https://whsminecraft.de/assets/server_ping_0.png'); }
+	}
+
+	.server-ping {
+		width: 20px;
+		height: 14px;
+		image-rendering: crisp-edges;
+		background-size: cover;
+		animation-name: server-ping;
+		animation-duration: 0.85s;
+		animation-iteration-count: infinite;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<img src="/assets/Title.png"/>
+		</a>
+	</header>
+	<main>
+		<h1>Server-Netzwerk</h1>
+		<section>
+			<div class="server-header">
+				<h2>Survival (Main)</h2>
+				<div class="server-status"><div class="server-ping"></div></div>
+			</div>
+			<input class="mc-input" readonly value="whsminecraft.de"/>
+			<p>Die wichtigste Welt von uns. Eigentlich alles entscheidende läuft hier ab. Auch die Karte auf der Startseite bezieht sich auf diese Welt.</p>
+		</section>
+		<section>
+			<div class="server-header">
+				<h2>Creative</h2>
+				<div class="server-status"><div class="server-ping"></div></div>
+			</div>
+			<input class="mc-input" readonly value="creative.whsminecraft.de"/>
+			<p>Eine Kopie der Survivalwelt mit Kreativmodus und Worldedit für alle. Gut geeignet um z.B. große Bauwerke zu planen.</p>
+		</section>
+		<section>
+			<div class="server-header">
+				<h2>Test</h2>
+				<div class="server-status"><div class="server-ping"></div></div>
+			</div>
+			<input class="mc-input" readonly value="test.whsminecraft.de"/>
+			<p>Hier werden Minecraft-Versionen getestet, die später auf den Hauptserver kommen. Aktuell läuft hier Version 1.17, da PaperMC noch nicht offiziell diese Version unterstützt.</p>
+		</section>
+	</main>
+<script>
+	async function updateServerStatus() {
+		const response = await fetch("https://whsminecraft.de/api/status");
+		const status_response = await response.json();
+
+		const url_elements = document.querySelectorAll('input');
+
+		url_elements.forEach(({parentElement, value: url}) => {
+			const server_status = status_response.find(s => s.url == url);
+			if (!server_status) { return; }
+
+			const { is_online, players_online, players_max, version } = server_status;
+
+			parentElement.querySelector('.server-status').innerHTML = is_online ? 
+				`<div>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
+				:
+				'<img src="/assets/server_no_connection.png" style="height: 20px; image-rendering: crisp-edges;"/>';
+		});
+	};
+
+	window.onload = updateServerStatus;
+</script>
+</body>
+</html>
