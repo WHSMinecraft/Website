@@ -5,8 +5,6 @@ Install npm
 
 
 $ npm i 
-# sudo npm i -g mustache
-
 
 $ make
 # make publish

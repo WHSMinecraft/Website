@@ -1,5 +1,6 @@
 .PHONY=all debug clean mrproper dev-start dev-stop
 
+MUSTACHE := ./node_modules/mustache/bin/mustache
 
 DOC_ROOT=/srv/http/whsminecraft.de/
 
@@ -70,14 +71,14 @@ _views/latestblog.json: _views/bloglist.json
 # HTMLs
 webroot/news/%/index.html: $(POSTVIEWDIR)/%.json _templates/blog_page.mustache
 	mkdir -p $(dir $@)
-	mustache $< _templates/blog_page.mustache > $@
+	$(MUSTACHE) $< _templates/blog_page.mustache > $@
 
 
 webroot/news/index.html: _views/bloglist.json _templates/blog_list.mustache $(PARTIALS)
 	mkdir -p $(dir $@)
-	mustache $< _templates/blog_list.mustache -p $(PARTIALS) > $@
+	$(MUSTACHE) $< _templates/blog_list.mustache -p $(PARTIALS) > $@
 
 
 webroot/index.html: _views/latestblog.json _templates/homepage.mustache $(PARTIALS)
-	mustache $< _templates/homepage.mustache -p $(PARTIALS) > $@
+	$(MUSTACHE) $< _templates/homepage.mustache -p $(PARTIALS) > $@
 
