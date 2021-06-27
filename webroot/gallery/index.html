@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
+	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
+	<title>Template</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<img src="/assets/Title.png"/>
+		</a>
+	</header>
+	<main>
+		<h1>Neue Seite</h1>
+		<img src="/content/camera/2020-12-02_00.47.24.png">
+		<img src="/content/camera/2021-01-26_00.14.15.png">
+		<img src="/content/camera/2021-01-26_00.15.57.png">
+		<img src="/content/camera/2021-01-28_20.27.22.png">
+	</main>
+	<div id="popuproot" style="position: fixed; top: 0; bottom: 0; background: rgba(0,0,0,0.5); padding: 5em; visibility: hidden;">
+	</div>
+	<script>
+		window.onload = function() {
+			popuproot.addEventListener('click', (e) => {
+				closeImage();
+			});
+
+			const images = document.querySelectorAll('main img');
+			images.forEach((img) => {
+				img.addEventListener('click', (e) => {
+					showImage(img);
+				});
+			});
+		}
+
+		const popuproot = document.querySelector('#popuproot');
+
+		function showImage(img) {
+			popuproot.appendChild(img.cloneNode());
+			popuproot.style.visibility = 'visible';
+		}
+
+		function closeImage() {
+			popuproot.style.visibility = 'hidden';
+			popuproot.innerHTML = '';
+		}
+	</script>
+</body>
+</html>
