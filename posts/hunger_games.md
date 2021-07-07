@@ -2,6 +2,7 @@
 Title:	Hunger Games
 Author:	Silas & Ruben
 Date:	5.1.2021
+Thumbnail:	/content/hunger_games_breeze_thumb.png
 ---
 <section>
 <p>

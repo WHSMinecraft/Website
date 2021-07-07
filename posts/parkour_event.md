@@ -1,7 +1,7 @@
 ---
 Title:	Parkour Event
 Author:	Silas & Ruben
-Thumbnail:	/content/parkour/side.png
+Thumbnail:	/content/parkour/parkour_thumb.png
 Date:	16.4.2021
 ---
 
