@@ -19,14 +19,14 @@ POSTS := $(notdir $(POSTS))
 POSTVIEWS := $(addsuffix .json, $(POSTS))
 POSTVIEWS := $(addprefix $(POSTVIEWDIR)/, $(POSTVIEWS))
 
-POSTS := $(addprefix webroot/news/, $(POSTS))
-POSTS := $(addsuffix /index.html, $(POSTS))
+POSTHTMLS := $(addprefix webroot/news/, $(POSTS))
+POSTHTMLS := $(addsuffix /index.html, $(POSTHTMLS))
 
 
 
 
 # Default
-all: webroot/index.html webroot/news/index.html $(POSTS)
+all: webroot/index.html webroot/news/index.html $(POSTHTMLS)
 
 
 dev-start: server.pid
