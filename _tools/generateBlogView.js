@@ -71,6 +71,6 @@ viewdata = {
 
 
 // print only result to console, for use in shell redirection
-console.log(JSON.stringify(viewdata));
+console.log(JSON.stringify(viewdata, null, 4));
 
 module.exports = viewdata;

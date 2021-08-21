@@ -28,7 +28,7 @@ glob('_views/news/*', {}, (err, files) => {
 	}
 
 
-	console.log(JSON.stringify(view));
+	console.log(JSON.stringify(view, null, 4));
 	module.exports = view;
 
 });
