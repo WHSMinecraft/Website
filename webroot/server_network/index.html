@@ -71,7 +71,39 @@
 			<p>Hier werden Minecraft-Versionen getestet, die später auf den Hauptserver kommen.</p>
 		</section>
 	</main>
+	<div id="tooltip-anchor"></div>
 <script>
+	function showTooltip(elm) {
+		const anchor = document.getElementById('tooltip-anchor');
+		if (anchor.hasChildNodes())
+			return;
+		const t = document.createElement('div');
+		t.classList.add('mc-tooltip');
+		t.innerText = elm.getAttribute('data-tooltip');
+		anchor.appendChild(t);
+
+		function setPos(x, y) {
+			t.style.top = (-15 + y) + 'px';
+			t.style.left = (15 + x) + 'px';
+		}
+
+		// Set initial pos to element when using touch screen device
+		if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+			const rect = elm.getBoundingClientRect();
+			setPos(rect.x, rect.y);
+		}
+
+		document.body.addEventListener('mousemove', function(e) {
+			setPos(e.clientX, e.clientY);
+		});
+	}
+
+	function removeTooltip() {
+		const anchor = document.getElementById('tooltip-anchor');
+		anchor.innerHTML = '';
+	}
+
+
 	async function updateServerStatus() {
 		const response = await fetch("https://whsminecraft.de/api/status");
 		const status_response = await response.json();
@@ -82,10 +114,11 @@
 			const server_status = status_response.find(s => s.url == url);
 			if (!server_status) { return; }
 
-			const { is_online, players_online, players_max, version } = server_status;
+			const { is_online, players_online, players_max, player_sample, version } = server_status;
+			const tooltip = players_online ? ` onmouseover="showTooltip(this);" onmouseleave="removeTooltip();" data-tooltip="${player_sample.join('\n')}"` : '';
 
 			parentElement.querySelector('.server-status').innerHTML = is_online ? 
-				`<div>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
+				`<div${tooltip}>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
 				:
 				'<img src="/assets/server_no_connection.png" style="height: 20px; image-rendering: crisp-edges;"/>';
 		});
