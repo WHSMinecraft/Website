@@ -4,7 +4,7 @@
 // call updateTooltips() everytime the above attribute (or elements containing it) are added
 // the other function are exposed for manual control
 
-function showTooltip(content) {
+function showTooltip(content, origin /* optional */) {
 	const anchor = document.getElementById('tooltip-anchor');
 	if (anchor.hasChildNodes())
 		removeTooltip();
@@ -19,8 +19,8 @@ function showTooltip(content) {
 	}
 
 	// Set initial pos to element when using touch screen device
-	if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-		const rect = elm.getBoundingClientRect();
+	if (isTouch()) {
+		const rect = origin.getBoundingClientRect();
 		setPos(rect.x, rect.y);
 	}
 
@@ -43,12 +43,25 @@ function fadeTooltip() {
 
 function updateTooltips() {
 	const tooltipElms = document.querySelectorAll('[data-tooltip]');
-	tooltipElms.forEach((elm) => {
-		elm.addEventListener('mouseleave', function() {
-			removeTooltip();
+	if (isTouch()) {
+		tooltipElms.forEach((elm) => {
+			elm.addEventListener('touchstart', function() {
+				showTooltip(elm.getAttribute('data-tooltip'), elm);
+				setTimeout(fadeTooltip, 2000);
+			});
 		});
-		elm.addEventListener('mouseenter', function() {
-			showTooltip(elm.getAttribute('data-tooltip'));
+	} else { // mouse
+		tooltipElms.forEach((elm) => {
+			elm.addEventListener('mouseenter', function() {
+				showTooltip(elm.getAttribute('data-tooltip'), elm);
+			});
+			elm.addEventListener('mouseleave', function() {
+				removeTooltip();
+			});
 		});
-	});
+	}
+}
+
+function isTouch() {
+	return 'ontouchstart' in window || navigator.msMaxTouchPoints;
 }
