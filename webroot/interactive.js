@@ -34,7 +34,14 @@ function removeTooltip() {
 	anchor.innerHTML = '';
 }
 
-function fadeTooltip() {
+let tooltipfadetimer;
+
+function fadeTooltipIn(ms) {
+	clearTimeout(tooltipfadetimer);
+	tooltipfadetimer = setTimeout(_fadeTooltip, ms);
+}
+
+function _fadeTooltip() {
 	const anchor = document.getElementById('tooltip-anchor');
 	const tooltip = anchor.children[0];
 	tooltip.style.opacity = 0;
@@ -47,7 +54,7 @@ function updateTooltips() {
 		tooltipElms.forEach((elm) => {
 			elm.addEventListener('touchstart', function() {
 				showTooltip(elm.getAttribute('data-tooltip'), elm);
-				setTimeout(fadeTooltip, 2000);
+				fadeTooltipIn(2000);
 			});
 		});
 	} else { // mouse
