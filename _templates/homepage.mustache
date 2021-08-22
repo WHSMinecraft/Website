@@ -109,8 +109,10 @@
 	<footer class="footnote">
 		<a href="mailto:webmaster@whsminecraft.de">webmaster@whsminecraft.de</a>
 	</footer>
+	<div id="tooltip-anchor"></div>
+	<script src="/interactive.js"></script>
 	<script>
-		function addressClick(btn) {
+		function addressClick() {
 			const t = document.createElement('textarea');
 			t.innerText = 'whsminecraft.de';
 			document.body.appendChild(t);
@@ -118,36 +120,8 @@
 			document.execCommand('copy');
 			document.body.removeChild(t);
 
-			showTooltip(btn);
-		}
-
-		function showTooltip(elm) {
-			const t = document.createElement('div');
-			t.classList.add('mc-tooltip');
-			t.innerText = elm.getAttribute('data-tooltip');
-			document.body.appendChild(t);
-	
-			function setPos(x, y) {
-				t.style.top = (-15 + y) + 'px';
-				t.style.left = (15 + x) + 'px';
-			}
-		
-			// Set initial pos to element when using touch screen device
-			if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-				const rect = elm.getBoundingClientRect();
-				setPos(rect.x, rect.y);
-			}
-			
-			document.body.addEventListener('mousemove', function(e) {
-				setPos(e.clientX, e.clientY);
-			});
-
-			setTimeout(function() {
-				t.style.opacity = 0;
-				setTimeout(function() {
-					document.body.removeChild(t);
-				}, 1000);
-			}, 3000);
+			showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.');
+			setTimeout(fadeTooltip, 3000);
 		}
 	</script>
 </body>
