@@ -112,7 +112,7 @@
 	<div id="tooltip-anchor"></div>
 	<script src="/interactive.js"></script>
 	<script>
-		function addressClick() {
+		function addressClick(btn) {
 			const t = document.createElement('textarea');
 			t.innerText = 'whsminecraft.de';
 			document.body.appendChild(t);
@@ -120,7 +120,7 @@
 			document.execCommand('copy');
 			document.body.removeChild(t);
 
-			showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.');
+			showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.', btn);
 			fadeTooltipIn(3000);
 		}
 	</script>
