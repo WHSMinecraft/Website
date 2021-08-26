@@ -183,6 +183,16 @@ figure figcaption {
 	font-size: smaller;
 }
 
+a.external::after {
+	image-rendering: crisp-edges;
+	display: inline-block;
+	content: url('/assets/link_icon_fresh.png');
+	transform: scale(2);
+	margin-left: 11px;
+	margin-top: 1px;
+	position: absolute;
+}
+
 /* ============ Minecraft UI Elements ============ */
 
 .mc-tooltip {
