@@ -125,10 +125,8 @@ td {
 	display: flex;
 }
 
-@media (max-width: 600px) {
-	.flex {
-		flex-direction: column;
-	}
+.flex-column {
+	flex-direction: column;
 }
 
 .flex .mc-button-gap {
