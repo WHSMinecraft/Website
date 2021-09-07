@@ -76,7 +76,7 @@
 	<script src="/interactive.js"></script>
 <script>
 	async function updateServerStatus() {
-		const response = await fetch("https://whsminecraft.de/api/status");
+		const response = await fetch("https://api.whsminecraft.de/status");
 		const status_response = await response.json();
 
 		const url_elements = document.querySelectorAll('input');
