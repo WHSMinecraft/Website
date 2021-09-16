@@ -101,8 +101,13 @@
 				'<img data-tooltip="Offline" src="/assets/server_no_connection.png" style="height: 14px; image-rendering: crisp-edges;"/>';
 		});
 		updateTooltips();
+
+		const total_players = status_response.reduce((a,b) => a + b.players_online, 0);
+		console.debug({ total_players });
+		document.title = total_players > 0 ? `${title} (${total_players})` : title;
 	};
 
+	const title = document.title;
 
 	updateTooltips();
 	updateServerStatus();
