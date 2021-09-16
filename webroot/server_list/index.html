@@ -82,7 +82,6 @@
 	<script src="/interactive.js"></script>
 <script>
 	async function updateServerStatus() {
-		updateTooltips();
 		const response = await fetch("https://api.whsminecraft.de/status");
 		const status_response = await response.json();
 		removeTooltip();
@@ -104,7 +103,11 @@
 		updateTooltips();
 	};
 
-	window.onload = updateServerStatus;
+
+	updateTooltips();
+	updateServerStatus();
+
+	setInterval(updateServerStatus, 5000);
 </script>
 </body>
 </html>
