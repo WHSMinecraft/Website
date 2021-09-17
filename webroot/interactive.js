@@ -10,7 +10,7 @@ function showTooltip(content, origin /* optional */) {
 		removeTooltip();
 	const t = document.createElement('div');
 	t.classList.add('mc-tooltip');
-	t.innerText = content;
+	t.innerHTML = content;
 	anchor.appendChild(t);
 
 	function setPos(x, y) {
