@@ -202,11 +202,13 @@ a.external::after {
         padding: 5px;
         color: white;
         background-color: #100010F0;
-        border: 2px #180034F5 solid;
         box-shadow:     2px 0px 0px 0px #100010F0,
                         0px 2px 0px 0px #100010F0,
                         -2px 0px 0px 0px #100010F0,
                         0px -2px 0px 0px #100010F0;
+        border: 2px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom, #2e0a65F0, #180034F5);
 }
 
 .mc-input {
