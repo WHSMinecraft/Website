@@ -72,3 +72,12 @@ function updateTooltips() {
 function isTouch() {
 	return 'ontouchstart' in window || navigator.msMaxTouchPoints;
 }
+
+function setClipboard(text) {
+	const t = document.createElement('textarea');
+	t.innerText = text;
+	document.body.appendChild(t);
+	t.select();
+	document.execCommand('copy');
+	document.body.removeChild(t);
+}

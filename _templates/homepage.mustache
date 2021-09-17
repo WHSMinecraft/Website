@@ -121,13 +121,7 @@
 	<script src="/interactive.js"></script>
 	<script>
 		function addressClick(btn) {
-			const t = document.createElement('textarea');
-			t.innerText = 'whsminecraft.de';
-			document.body.appendChild(t);
-			t.select();
-			document.execCommand('copy');
-			document.body.removeChild(t);
-
+			setClipboard('whsminecraft.de');
 			showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.', btn);
 			fadeTooltipIn(3000);
 		}
