@@ -1,7 +1,7 @@
 ---
 Author:	Ruben
 Date:	21.8.2021
-Thumbnail:	/content/WHS_Discord.png
+Thumbnail:	/content/WHS_Discord_thumb.png
 ---
 
 <section>
