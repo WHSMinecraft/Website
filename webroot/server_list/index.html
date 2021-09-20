@@ -99,11 +99,13 @@
 				`<div${tooltip}>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
 				:
 				'<img data-tooltip="Offline" src="/assets/server_no_connection.png" style="height: 14px; image-rendering: crisp-edges;"/>';
+
+			versionText = version.includes('w') ? 'Snapshot' : 'Version';
+			parentElement.querySelector('h2').setAttribute('data-tooltip', `${versionText} ${version}`);
 		});
 		updateTooltips();
 
 		const total_players = status_response.reduce((a,b) => a + b.players_online, 0);
-		console.debug({ total_players });
 		document.title = total_players > 0 ? `${title} (${total_players})` : title;
 	};
 
@@ -111,7 +113,6 @@
 
 	updateTooltips();
 	updateServerStatus();
-
 	setInterval(updateServerStatus, 5000);
 </script>
 </body>
