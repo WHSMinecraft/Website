@@ -4,29 +4,45 @@
 // call updateTooltips() everytime the above attribute (or elements containing it) are added
 // the other function are exposed for manual control
 
-function showTooltip(content, origin /* optional */) {
+function showTooltip(content, origin) {
 	const anchor = document.getElementById('tooltip-anchor');
-	if (anchor.hasChildNodes())
-		removeTooltip();
-	const t = document.createElement('div');
-	t.classList.add('mc-tooltip');
+	let t;
+	if (anchor.hasChildNodes()) {
+		t = anchor.children[0];
+	} else {
+		t = document.createElement('div');
+		t.classList.add('mc-tooltip');
+		anchor.appendChild(t);
+	}
 	t.innerText = content;
-	anchor.appendChild(t);
 
 	function setPos(x, y) {
-		t.style.top = (-15 + y) + 'px';
-		t.style.left = (15 + x) + 'px';
+		t.style.top = y + 'px';
+		t.style.left = x + 'px';
 	}
 
-	// Set initial pos to element when using touch screen device
 	if (isTouch()) {
-		const rect = origin.getBoundingClientRect();
-		setPos(rect.x, rect.y);
-	}
+		// Tooltip is placed centered on top of origin, and stays there
+		t.classList.add('mc-tooltip-element');
+		const rectRoot = origin.getBoundingClientRect();
+		const rectTip = t.getBoundingClientRect();
 
-	document.body.addEventListener('mousemove', function(e) {
-		setPos(e.clientX, e.clientY);
-	});
+		const marginTip = 5;
+		let y = rectRoot.top + scrollY - marginTip - rectTip.height;
+		let x = (rectRoot.width / 2 + rectRoot.left) - (rectTip.width / 2);
+		// move to right or left to prevent tooltip overflowing out of screen
+		if (x < 0)
+			x = marginTip;
+		if (x + rectTip.width > screen.width)
+			x = screen.width - rectTip.width - marginTip;
+		setPos(x, y);
+	} else {
+		// Tooltip follows mouse
+		t.classList.add( 'mc-tooltip-mouse');
+		document.body.addEventListener('mousemove', function(e) {
+			setPos(e.clientX + 15, e.clientY - 15);
+		});
+	}
 }
 
 function removeTooltip() {

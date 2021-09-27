@@ -204,8 +204,6 @@ a.external::after {
 /* ============ Minecraft UI Elements ============ */
 
 .mc-tooltip {
-        position: fixed;
-
         transition: opacity 0.5s;
 
         padding: 0.2em 0.5em;
@@ -218,6 +216,14 @@ a.external::after {
         border: 0.1em solid;
         border-image-slice: 1;
         border-image-source: linear-gradient(to bottom, #2e0a65F0, #180034F5);
+}
+
+.mc-tooltip-mouse {
+	position: fixed;
+}
+
+.mc-tooltip-element {
+	position: absolute;
 }
 
 .mc-input {
