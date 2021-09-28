@@ -36,6 +36,14 @@
 		animation-duration: 0.85s;
 		animation-iteration-count: infinite;
 	}
+
+	.server-offline {
+		width: 20px;
+		height: 14px;
+		image-rendering: crisp-edges;
+		background-size: cover;
+		background-image: url('/assets/server_no_connection.png');
+	}
 </style>
 </head>
 <body>
@@ -97,7 +105,7 @@
 			parentElement.querySelector('.server-status').innerHTML = is_online ? 
 				`<div${tooltip}>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
 				:
-				'<img data-tooltip="Offline" src="/assets/server_no_connection.png" style="height: 14px; image-rendering: crisp-edges;"/>';
+				'<div class="server-offline" data-tooltip="Offline"></div>';
 
 			versionText = version.includes('w') ? 'Snapshot' : 'Version';
 			parentElement.querySelector('h2').setAttribute('data-tooltip', `${versionText} ${version}`);
