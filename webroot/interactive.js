@@ -42,6 +42,10 @@ function showTooltip(content, origin) {
 		document.body.addEventListener('mousemove', function(e) {
 			setPos(e.clientX + 15, e.clientY - 15);
 		});
+		const e = window.event;
+		if (e && e.type === 'click') {
+			setPos(e.clientX + 15, e.clientY - 15);
+		}
 	}
 }
 
