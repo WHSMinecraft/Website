@@ -220,10 +220,11 @@ section {
 			address.classList.add('mc-input-focused');
 			name.classList.remove('mc-input-focused');
 			await enterValue(address, addrVal);
-			address.classList.remove('mc-input-focused');
 
 			await sleep(500);
+			address.classList.remove('mc-input-focused');
 			finish.classList.add('mc-button-focused');
+
 			await sleep(1500);
 			finish.classList.remove('mc-button-focused');
 		}
