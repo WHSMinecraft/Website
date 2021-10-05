@@ -51,6 +51,7 @@ function setBackground() {
 			const blockType = blockComp[Math.floor(Math.random()*blockComp.length)]
 			const blockElm = document.createElement('img');
 			blockElm.classList.add('mc-block');
+			blockElm.classList.add('pixel');
 			blockElm.style.width  = blockWidth  + 'px';
 			blockElm.style.height = blockHeight + 'px';
 			blockElm.src = `/assets/block_textures/${blockType}.png`;

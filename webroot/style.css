@@ -207,7 +207,6 @@ figure figcaption {
 }
 
 a.external::after {
-	image-rendering: crisp-edges;
 	display: inline-block;
 	content: url('/assets/link_icon_fresh.png');
 	transform: scale(2);
@@ -323,6 +322,9 @@ a.external::after {
 
 .mc-block {
 	/* background-image is set by js code */
+}
+
+.pixel {
 	background-size: cover;
 	image-rendering: optimizeSpeed;             /*                     */
 	image-rendering: -moz-crisp-edges;          /* Firefox             */
@@ -332,4 +334,3 @@ a.external::after {
 	image-rendering: optimize-contrast;         /* CSS3 Proposed       */
 	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }
-

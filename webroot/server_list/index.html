@@ -58,7 +58,7 @@
 			<div class="server-header">
 				<h2>Survival (Main)</h2>
 				<div class="server-status">
-					<div class="server-ping" data-tooltip="Pinging..."></div>
+					<div class="server-ping pixel" data-tooltip="Pinging..."></div>
 				</div>
 			</div>
 			<input class="mc-input" readonly value="whsminecraft.de"/>
@@ -69,7 +69,7 @@
 			<div class="server-header">
 				<h2>Creative</h2>
 				<div class="server-status">
-					<div class="server-ping" data-tooltip="Pinging..."></div>
+					<div class="server-ping pixel" data-tooltip="Pinging..."></div>
 				</div>
 			</div>
 			<input class="mc-input" readonly value="creative.whsminecraft.de"/>
@@ -79,7 +79,7 @@
 			<div class="server-header">
 				<h2>Test</h2>
 				<div class="server-status">
-					<div class="server-ping" data-tooltip="Pinging..."></div>
+					<div class="server-ping pixel" data-tooltip="Pinging..."></div>
 				</div>
 			</div>
 			<input class="mc-input" readonly value="test.whsminecraft.de"/>
@@ -106,7 +106,7 @@
 			parentElement.querySelector('.server-status').innerHTML = is_online ? 
 				`<div${tooltip}>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
 				:
-				'<div class="server-offline" data-tooltip="Offline"></div>';
+				'<div class="server-offline pixel" data-tooltip="Offline"></div>';
 
 			versionText = version.includes('w') ? 'Snapshot' : 'Version';
 			parentElement.querySelector('h2').setAttribute('data-tooltip', `${versionText} ${version}`);
