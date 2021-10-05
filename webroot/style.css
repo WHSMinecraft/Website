@@ -138,15 +138,9 @@ ul {
 	flex-direction: column;
 }
 
-.flex .mc-button-gap {
-	flex-grow: 0;
-	flex-shrink: 0;
-	flex-basis: 1em;
-}
-
-.flex .mc-button {
-	flex-grow: 1;
-	flex-basis: 0;
+.flex:not(.flex-column) .mc-button {
+       flex-grow: 1;
+       flex-basis: 0;
 }
 
 .server-header {
@@ -155,6 +149,11 @@ ul {
 }
 
 /* ============ Text styles============ */
+
+i {
+	font-style: italic;
+}
+
 p a {
 	font-style: italic;
 	color: #f0f0f0;
@@ -188,6 +187,23 @@ figure figcaption {
 	color: #808080;
 	font-style: italic;
 	font-size: smaller;
+}
+
+.listing {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
+.listing figure img {
+	display: block;
+	margin: 0 auto;
+}
+
+.listing figcaption {
+	margin-top: 12px;
+	margin-bottom: 25px;
+	text-align: center;
 }
 
 a.external::after {
@@ -241,16 +257,20 @@ a.external::after {
 	background-color: black;
 }
 
-.mc-input:focus {
+.mc-input:focus,
+.mc-input-focused {
 	outline-color: white;
 }
 
 .mc-button {
 	cursor: pointer;
+	display: inline-block;
 
 	text-align: center;
 	white-space: nowrap;
 	color: white;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
 	padding: 0.3em 0.8em 0.4em 0.8em;
 
@@ -270,8 +290,9 @@ a.external::after {
 }
 
 
-.mc-button:focus,
-.mc-button:hover {
+.mc-button:focus:not(.mc-button-fixed),
+.mc-button:hover:not(.mc-button-fixed),
+.mc-button-focused {
 	outline-color: white;
 }
 

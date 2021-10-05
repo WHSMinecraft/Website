@@ -56,9 +56,9 @@
 			<h3>Spiel mit!</h3>
 			<input class="mc-input" readonly value="whsminecraft.de"/>
 			<div class="center">
-				<button class="mc-button" onclick="addressClick(this);">
-					Server beitreten
-				</button>
+				<a class="mc-button" href="/start/">
+					Spiel mit!
+				</a>
 			</div>
 		</section>
 		<section>
@@ -117,15 +117,6 @@
 	<div class="footnote">
 		<a href="mailto:webmaster@whsminecraft.de">webmaster@whsminecraft.de</a>
 	</div>
-	<div id="tooltip-anchor"></div>
-	<script src="/interactive.js"></script>
 	<script src="/background.js"></script>
-	<script>
-		function addressClick(btn) {
-			setClipboard('whsminecraft.de');
-			showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.', btn);
-			fadeTooltipIn(3000);
-		}
-	</script>
 </body>
 </html>

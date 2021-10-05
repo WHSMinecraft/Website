@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="Minecraft, Westfälische Hochschule, AStA, WHS, WH, Server, Spiel, Game"/>
+	<meta name="description" content="Die offizielle Homepage des WHS Minecraft Servers"/>
+	<title>Spiel mit!</title>
+	<link rel="icon" href="/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="/style.css"/>
+<style>
+main {
+	max-width: 850px;
+}
+
+section {
+	margin-bottom: 120px;
+}
+
+.location-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.location {
+	position: relative;
+	height: 400px;
+	flex-basis: 30%;
+	flex-shrink: 3;
+	overflow: hidden;
+	transition-duration: 0.3s;
+}
+
+.location:hover {
+	flex-basis: 70%;
+}
+
+.location-description {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 0;
+	opacity: 0;
+	transition: 0.3s;
+	white-space: pre-line;
+	color: white;
+}
+
+.location:hover .location-description {
+	opacity: 0.8;
+}
+
+.location-preview {
+	position: relative;
+	height: 100%;
+	max-width: inherit;
+	max-height: inherit;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.location-footer {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 0;
+}
+
+.mc-button-row {
+	display: flex;
+	column-gap: 0.5em;
+	justify-content: space-between;
+}
+
+.mc-menu {
+	background-image: url('/assets/mc_dirt_background.png');
+	background-size: 100%;
+	image-redering: crisp-edges;
+	overflow: hidden;
+	padding: 2em;
+	margin-bottom: 1em;
+	box-shadow: inset 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.7);
+}
+</style>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<img src="/assets/Title.png"/>
+		</a>
+	</header>
+	<main>
+		<section>
+			<h2>Standorte</h2>
+			<div class="location-list">
+				<article class="location">
+					<img class="location-preview" src="/assets/locations/bocholt.png" />
+					<div class="location-footer">
+						<h2>Bocholt</h2>
+					</div>
+					<div class="location-description">
+						Der erste und älteste Standort auf dem Server.
+					</div>
+				</article>
+				<article class="location">
+					<img class="location-preview" src="/assets/locations/gelsenkirchen.png" />
+					<div class="location-footer">
+						<h2>Gelsenkirchen</h2>
+					</div>
+					<div class="location-description">
+						Eine wunderschöne Hafenstadt. Wird irgendwann einen Preis gewinnen.
+					</div>
+				</article>
+				<article class="location">
+					<img class="location-preview" src="/assets/locations/recklinghausen.png" />
+					<div class="location-footer">
+						<h2>Recklinghausen</h2>
+					</div>
+					<div class="location-description">
+						Ein Ort voller Tohuwabohu, wo alle glücklich sind.
+					</div>
+				</article>
+			</div>
+		</section>
+		<section style="max-width: 550px; margin-left: auto; margin-right: auto;">
+			<h2>So trittst du dem Server bei</h2>
+			<div class="mc-menu">
+				<h3>Servername</h3>
+				<input readonly class="mc-input" value="Der beste Server der Welt!" id="server-name"/>
+				<h3>Serveradresse</h3>
+				<input readonly class="mc-input" value="whsminecraft.de" id="server-address"/>
+				&nbsp;
+				<div class="flex">
+					<button disabled class="mc-button mc-button-fixed">Server-Ressourcenpakete: Abfrage</button>
+				</div>
+				&nbsp;
+				<div class="flex">
+					<button disabled class="mc-button mc-button-fixed mc-button-focused" id="server-finish">Fertig</button>
+				</div>
+				<div class="flex">
+					<button disabled class="mc-button mc-button-fixed">Abbrechen</button>
+				</div>
+			</div>
+			<p>Klicke im Mehrspielermenü auf 'Server hinzufügen'. Dann trage die Adresse <code role="button" onclick="addressClick(this);">whsminecraft.de</code> und einen Namen ein.</p>
+			<p>Nicht auf PC? Dann ist der Port 19132.</p>
+		</section>
+		<section style="max-width: 650px; margin-left: auto; margin-right: auto;">
+			<h2>Grundstücke und Griefschutz</h2>
+			<p>Wenn du dein erstes Haus fertiggestellt hast, möchtest du natürlich nicht, dass jemand es zerstört.</p>
+			<p>Damit dies nicht passiert, kannst du dir ein Grundstück, auch Claim gennant, erstellen.</p>
+			<p>Dafür musst du auf eine Ecke deines Hauses mit einer goldenen Schaufel rechtsklicken, zur gegenüberliegenden Ecke laufen und diese ebenfalls anklicken.</p>
+			<div class="listing">
+				<figure>
+					<img class="pixel" style="width: 96px" src="/assets/item_textures/golden_shovel.png"/>
+					<figcaption>Zum Erstellen von Claims</figcaption>
+				</figure>
+				<figure>
+					<img class="pixel" style="width: 96px" src="/assets/item_textures/stick.png"/>
+					<figcaption>Zum Anzeigen von Claims</figcaption>
+				</figure>
+			</div>
+			<h2>Wie kann mein Freund jetzt an meinem Haus mitbauen?</h2>
+			<p>
+			Wenn du in deinem Claim stehst, kannst du mit verschieden Befehlen Spielern Rechte vergeben.
+			Hier ist eine Liste. Jedes Rechtelevel beinhaltet die Rechte, die darunter liegen.
+			</p>
+			<ul>
+				<li>
+					<code>/trust <i>Spieler</i></code>
+					<p>Der Spieler kann Blöcke setzen und zerstören. Auch kann er Tiere töten.</p>
+				</li>
+				<li>
+					<code>/containertrust <i>Spieler</i></code>
+					<p>Der Spieler kann auf Kisten, Dispenser und andere Inventare zugreifen und Items nehmen.</p>
+				</li>
+				<li>
+					<code>/accesstrust <i>Spieler</i></code>
+					<p>Der Spieler kann Knöpfe, Türen, Druckplatten und andere Funktionen verwenden. Auch Tiere können gefüttert werden.</p>
+				</li>
+			</ul>
+			<p>
+			Der Spielername <code>public</code> vergibt das Recht an alle Spieler.
+			Zusätzlich gibt es noch den Befehl <code>/permissiontrust <i>Spieler</i></code>, mit dem der Spieler seine Rechte weitergeben kann.
+			</p>
+			<a href="https://github.com/TechFortress/GriefPrevention/wiki/Commands" data-tooltip="Noch mehr Befehle...">Mehr...</a>
+		</section>
+	</main>
+	<div id="tooltip-anchor"></div>
+	<script src="/interactive.js"></script>
+	<script>
+		updateTooltips();
+	</script>
+	<script src="/background.js"></script>
+	<script>
+		const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+		async function playServerAddAnimation() {
+			const name = document.getElementById('server-name');
+			const address = document.getElementById('server-address');
+			const finish = document.getElementById('server-finish');
+
+			const nameVal = 'Der beste Server der Welt!';
+			const addrVal = 'whsminecraft.de';
+
+			name.value = '';
+			address.value = '';
+			finish.classList.remove('mc-button-focused');
+
+			async function enterValue(elm, value) {
+				for (let i = 0; i < value.length; i++) {
+					await sleep(100);
+					elm.value = value.substr(0, i + 1);
+				}
+			}
+
+			name.classList.add('mc-input-focused');
+			await enterValue(name, nameVal);
+
+			await sleep(500);
+			address.classList.add('mc-input-focused');
+			name.classList.remove('mc-input-focused');
+			await enterValue(address, addrVal);
+			address.classList.remove('mc-input-focused');
+
+			await sleep(500);
+			finish.classList.add('mc-button-focused');
+			await sleep(1500);
+			finish.classList.remove('mc-button-focused');
+		}
+
+		async function runAnimation() {
+			for (;;)
+				await playServerAddAnimation();
+		}
+
+		runAnimation();
+	</script>
+	<script>
+	function addressClick(btn) {
+		setClipboard('whsminecraft.de');
+		showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.', btn);
+		fadeTooltipIn(3000);
+	}
+	</script>
+</body>
+</html>
