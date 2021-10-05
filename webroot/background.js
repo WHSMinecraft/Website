@@ -1,18 +1,16 @@
 function getBlockComp(i, total) {
-	const dirt_height = 4;
 	if (i === 0)
 		return ['grass_block_side'];
 	if (i === 1)
 		return ['dirt'];
-	if (1 < i && i < dirt_height) {
-		const amount = Math.floor((i / dirt_height) * 11 * Math.random());
-		console.debug(i, amount);
-		return ['dirt', 'dirt', ...Array(amount).fill('stone')];
-	}
-	if (i === total - 1)
-		return ['bedrock'];
+	if (i === 2)
+		return ['dirt', 'stone'];
+	if (i === 3)
+		return ['dirt', 'stone', 'stone', 'stone', 'stone', 'stone', 'stone'];
 	if (i === total - 2)
 		return ['stone', 'bedrock'];
+	if (i === total - 1)
+		return ['bedrock'];
 
 
 	return [...Array(40).fill('stone'), 'coal_ore', 'coal_ore', 'gold_ore', 'emerald_ore', 'diamond_ore'];
@@ -68,7 +66,6 @@ function setBackground() {
 			rowElm.appendChild(blockElm);
 		}
 
-		console.debug(rowElm);
 		background.appendChild(rowElm);
 	}
 
