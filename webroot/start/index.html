@@ -66,12 +66,6 @@ section {
 	bottom: 0;
 }
 
-.mc-button-row {
-	display: flex;
-	column-gap: 0.5em;
-	justify-content: space-between;
-}
-
 .mc-menu {
 	background-image: url('/assets/mc_dirt_background.png');
 	background-size: 100%;
@@ -130,14 +124,12 @@ section {
 				<h3>Serveradresse</h3>
 				<input readonly class="mc-input" value="whsminecraft.de" id="server-address"/>
 				&nbsp;
-				<div class="flex">
+				<div class="mc-button-list">
 					<button disabled class="mc-button mc-button-fixed">Server-Ressourcenpakete: Abfrage</button>
 				</div>
 				&nbsp;
-				<div class="flex">
+				<div class="mc-button-list">
 					<button disabled class="mc-button mc-button-fixed mc-button-focused" id="server-finish">Fertig</button>
-				</div>
-				<div class="flex">
 					<button disabled class="mc-button mc-button-fixed">Abbrechen</button>
 				</div>
 			</div>
