@@ -126,11 +126,6 @@ ul {
 	list-style-type: square;
 }
 
-.server-header {
-	display: flex;
-	justify-content: space-between;
-}
-
 .mc-button-row {
 	display: flex;
 	justify-content: space-between;
