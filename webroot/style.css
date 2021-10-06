@@ -266,7 +266,6 @@ a.external::after {
 
 	padding: 0.3em 0.8em 0.4em 0.8em;
 
-	image-rendering: crisp-edges;
 	background-image: url('/assets/mc_button_texture.png');
 	background-size: 12em;
 
@@ -318,7 +317,6 @@ a.external::after {
 }
 
 .pixel {
-	background-size: cover;
 	image-rendering: optimizeSpeed;             /*                     */
 	image-rendering: -moz-crisp-edges;          /* Firefox             */
 	image-rendering: -o-crisp-edges;            /* Opera               */
