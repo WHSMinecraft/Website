@@ -1,5 +1,4 @@
 .PHONY=all debug clean mrproper dev-start dev-stop
-
 MUSTACHE := ./node_modules/mustache/bin/mustache
 
 DOC_ROOT=/srv/http/whsminecraft.de/
@@ -7,6 +6,7 @@ DOC_ROOT=/srv/http/whsminecraft.de/
 
 SRC_FILES := $(wildcard webroot/*)
 SRC_FILES := $(filter-out webroot/map, $(SRC_FILES))
+SRC_FILES := $(filter-out webroot/test, $(SRC_FILES))
 
 PARTIALS := _templates/blog_entry.mustache
 
