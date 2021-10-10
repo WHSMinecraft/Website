@@ -17,6 +17,8 @@ function getBlockComp(i, total) {
 }
 
 function setBackground() {
+	console.debug('Setting up background...');
+
 	const background = document.createElement('div');
 	background.id = 'background';
 	document.body.appendChild(background);
@@ -68,8 +70,11 @@ function setBackground() {
 
 		background.appendChild(rowElm);
 	}
-
+	console.debug('Setted up background');
 }
 
-
-document.body.onload = setBackground;
+document.addEventListener('readystatechange', event => {
+	if (event.target.readyState === 'complete') {
+		setBackground();
+	}
+});

@@ -123,7 +123,7 @@ section {
 					<button disabled class="mc-button pixel mc-button-fixed">Abbrechen</button>
 				</div>
 			</div>
-			<p>Klicke im Mehrspielermenü auf 'Server hinzufügen'. Dann trage die Adresse <code role="button" onclick="addressClick(this);">whsminecraft.de</code> und einen Namen ein.</p>
+			<p>Klicke im Mehrspielermenü auf 'Server hinzufügen'. Dann trage die Adresse <code>whsminecraft.de</code> und einen Namen ein.</p>
 			<p>Nicht auf PC? Dann ist der Port 19132.</p>
 		</section>
 		<section style="max-width: 650px; margin-left: auto; margin-right: auto;">
@@ -167,11 +167,7 @@ section {
 			<a href="https://github.com/TechFortress/GriefPrevention/wiki/Commands" data-tooltip="Noch mehr Befehle...">Mehr...</a>
 		</section>
 	</main>
-	<div id="tooltip-anchor"></div>
 	<script src="/interactive.js"></script>
-	<script>
-		updateTooltips();
-	</script>
 	<script src="/background.js"></script>
 	<script>
 		const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -217,13 +213,6 @@ section {
 		}
 
 		runAnimation();
-	</script>
-	<script>
-	function addressClick(btn) {
-		setClipboard('whsminecraft.de');
-		showTooltip('Adresse kopiert! Du kannst sie nun im Spiel einfügen.', btn);
-		fadeTooltipIn(3000);
-	}
 	</script>
 </body>
 </html>

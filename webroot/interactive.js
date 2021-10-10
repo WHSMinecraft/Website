@@ -1,7 +1,4 @@
-// add this script
-// add <div id="tooltip-anchor"></div> to body
-// add 'data-tooltip="Content of the tooltip"' to elmeents of your choice
-// call updateTooltips() everytime the above attribute (or elements containing it) are added
+// add 'data-tooltip="Content of the tooltip"' to elements of your choice
 // the other function are exposed for manual control
 
 function showTooltip(content, origin) {
@@ -69,6 +66,8 @@ function _fadeTooltip() {
 }
 
 function updateTooltips() {
+	console.debug('Updating tooltips...');
+
 	const tooltipElms = document.querySelectorAll('[data-tooltip]');
 	if (isTouch()) {
 		tooltipElms.forEach((elm) => {
@@ -87,6 +86,8 @@ function updateTooltips() {
 			});
 		});
 	}
+
+	console.debug('Updated tooltips');
 }
 
 function isTouch() {
@@ -101,3 +102,27 @@ function setClipboard(text) {
 	document.execCommand('copy');
 	document.body.removeChild(t);
 }
+
+function updateCodeTags() {
+	console.debug('Updating code tags...');
+
+	const tags = document.querySelectorAll('code');
+	tags.forEach((elm) => {
+		elm.addEventListener('click', function() {
+			setClipboard(elm.textContent);
+			showTooltip('In Zwischenablage kopiert');
+			fadeTooltipIn(1000);
+		});
+	});
+
+	console.debug('Updated code tags');
+}
+
+document.body.onload = () => {
+	const anchor = document.createElement('div');
+	anchor.id = 'tooltip-anchor';
+	document.body.appendChild(anchor);
+
+	updateTooltips();
+	updateCodeTags();
+};
