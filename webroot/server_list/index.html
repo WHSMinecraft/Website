@@ -103,7 +103,7 @@
 			if (!server_status) { return; }
 
 			const { is_online, players_online, players_max, player_sample, version } = server_status;
-			const tooltip = players_online ? ` data-tooltip="${player_sample.join('\n')}"` : '';
+			const tooltip = players_online ? ` data-tooltip="${player_sample.sort().join('\n')}"` : '';
 
 			parentElement.querySelector('.server-status').innerHTML = is_online ? 
 				`<div${tooltip}>${players_online} <span style="color: #808080">/</span> ${players_max}</div>`
