@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Website for the WHS Minecraft Server",
   "devDependencies": {
+    "eslint": "^8.0.0",
     "glob": "^7.1.7",
-    "node-html-parser": "^3.2.0",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "node-html-parser": "^3.2.0"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,5 @@
     "url": "https://github.com/WHSMinecraft/Website/issues"
   },
   "license": "ISC",
-  "homepage": "https://whsminecraft.de",
-  "dependencies": {}
+  "homepage": "https://whsminecraft.de"
 }

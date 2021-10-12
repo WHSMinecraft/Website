@@ -42,6 +42,11 @@ publish:
 	@echo Copying files to live web server...
 	cp -r ${SRC_FILES} ${DOC_ROOT}
 
+lint:
+	npx eslint --ignore-path .gitignore **/*.js
+
+lint-fix:
+	npx eslint --ignore-path .gitignore **/*.js --fix
 
 clean:
 	@echo Deleting generated HTMLs...
