@@ -40,7 +40,6 @@ function setBackground() {
 
 	console.debug(rowAmount, colAmount);
 
-	//const background = document.getElementById('background');
 	for (let row = 0; row < rowAmount; row++) {
 		const blockComp = getBlockComp(row, rowAmount);
 		console.debug(blockComp);
@@ -56,21 +55,12 @@ function setBackground() {
 			blockElm.style.height = blockHeight + 'px';
 			blockElm.src = `/assets/block_textures/${blockType}.png`;
 
-			blockElm.addEventListener('mousedown', function(e) {
-				console.debug(e);
-				const breakTexture = document.createElement('img');
-				breakTexture.classList.add('mc-block-destroy');
-				const origBlock = e.target;
-				const origin = origBlock.getBoundingClientRect();
-				console.debug(orgin);
-			});
-
 			rowElm.appendChild(blockElm);
 		}
 
 		background.appendChild(rowElm);
 	}
-	console.debug('Setted up background');
+	console.debug('Set up background');
 }
 
 document.addEventListener('readystatechange', event => {
