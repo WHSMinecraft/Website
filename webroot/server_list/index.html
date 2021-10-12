@@ -73,6 +73,7 @@
 			Wer erfolgreich ist, kann sich eine einzigartige Belohnung sichern
 			(<a href="/news/parkour_pyramid/">mehr erfahren</a>).
 			</p>
+			<p id="countdown"></p>
 		</section>
 		<section>
 			<div class="server-header">
@@ -144,6 +145,30 @@
 
 	updateServerStatus();
 	setInterval(updateServerStatus, 5000);
+</script>
+<script>
+	function createCountdown(countdown, end) {
+		function updateCountdown() {
+			const diff = (end - Date.now()) / 1000;
+			if (diff < 0) {
+				countdown.innerHTML = 'Worauf wartest du noch?';
+				return;
+			}
+			const seconds = Math.floor(diff % 60);
+			const minutes = Math.floor((diff / 60) % 60);
+			const hours = Math.floor((diff / 3600) % 100);
+
+			console.debug(hours, minutes, seconds);
+
+			countdown.innerHTML = `Nur noch <code>${hours}h ${minutes}m ${seconds}s</code>!`;
+		}
+		updateCountdown();
+		setInterval(updateCountdown, 1000);
+	}
+	createCountdown(
+		document.getElementById('countdown'),
+		new Date('2021-10-16T00:00:00+02:00')
+	);
 </script>
 </body>
 </html>
