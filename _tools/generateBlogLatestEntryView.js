@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 
 
-var path = require('path');
-var fs = require('fs');
-var glob = require('glob');
-
+const fs = require('fs');
 
 
 const filecontent = JSON.parse(fs.readFileSync('_views/bloglist.json', 'utf8'));

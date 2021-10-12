@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-
-var path = require('path');
-var fs = require('fs');
-var readline = require('readline');
-var html = require('node-html-parser');
+const process = require('process');
+const path = require('path');
+const fs = require('fs');
+const html = require('node-html-parser');
 
 
 
@@ -14,7 +13,7 @@ function parseData(path) {
 
 	const lines = filecontent.split('\n').filter(Boolean);
 	const data = {};
-	data['content'] = "";
+	data['content'] = '';
 
 	// Find first image and use it as a thumbnail
 	const firstImg = dom.querySelector('img');
@@ -30,7 +29,7 @@ function parseData(path) {
 
 	// Metadata can be specified in between blocks of "---"
 	let inMeta = false;
-	for (line of lines) {
+	for (const line of lines) {
 		if (line === '---') {
 			inMeta = !inMeta;
 			continue;
@@ -42,7 +41,7 @@ function parseData(path) {
 			continue;
 		}
 		if (!inMeta) {
-			data['content'] += line
+			data['content'] += line;
 		}
 	}
 
@@ -54,7 +53,7 @@ function makeReadable(str) {
 	return str.split('_').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
 }
 
-const blog_file_path = process.argv[2]
+const blog_file_path = process.argv[2];
 let blog_file = path.basename(blog_file_path);
 blog_file = blog_file.replace(path.extname(blog_file), '');
 

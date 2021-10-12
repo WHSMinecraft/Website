@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
 
-var path = require('path');
-var fs = require('fs');
-var glob = require('glob');
+const fs = require('fs');
+const glob = require('glob');
 
 
 
 glob('_views/news/*', {}, (err, files) => {
-	var blog_list = files.map((blog_file, idx) => {
+	const blog_list = files.map(blog_file => {
 		const data = fs.readFileSync(blog_file, 'utf8');
 		return JSON.parse(data);
 	});
@@ -16,16 +15,16 @@ glob('_views/news/*', {}, (err, files) => {
 
 	// Order by creation date
 	function dateStr2Date(str) {
-		l = str.split('.').map(Number);
+		const l = str.split('.').map(Number);
 		return new Date(l[2], l[1]-1, l[0]);
 	}
 	blog_list.sort((a,b) => {
 		return dateStr2Date(b.date) - dateStr2Date(a.date);
 	});
 
-	var view = {
-		"blog_list": blog_list
-	}
+	const view = {
+		'blog_list': blog_list
+	};
 
 
 	console.log(JSON.stringify(view, null, 4));

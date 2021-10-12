@@ -47,7 +47,7 @@ function setBackground() {
 		rowElm.classList.add('mc-block-row');
 
 		for (let col = 0; col < colAmount; col++) {
-			const blockType = blockComp[Math.floor(Math.random()*blockComp.length)]
+			const blockType = blockComp[Math.floor(Math.random()*blockComp.length)];
 			const blockElm = document.createElement('img');
 			blockElm.classList.add('mc-block');
 			blockElm.classList.add('pixel');
