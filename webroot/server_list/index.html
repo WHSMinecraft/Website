@@ -59,24 +59,6 @@
 		<h1>Server-Liste</h1>
 		<section>
 			<div class="server-header">
-				<h2>Parkour - Event</h2>
-				<div class="server-status">
-					<div class="server-ping pixel" data-tooltip="Pinging..."></div>
-				</div>
-			</div>
-			<input class="mc-input" readonly value="event.whsminecraft.de"/>
-			<p>
-			Das neue Parkour Event steht vor der Tür!
-			Ab dem 16. Oktober um 0.00 Uhr habt ihr 48 Stunden Zeit die Parkour Pyramide zu bewältigen.
-			</p>
-			<p>
-			Wer erfolgreich ist, kann sich eine einzigartige Belohnung sichern
-			(<a href="/news/parkour_pyramid/">mehr erfahren</a>).
-			</p>
-			<p id="countdown"></p>
-		</section>
-		<section>
-			<div class="server-header">
 				<h2>Survival (Main)</h2>
 				<div class="server-status">
 					<div class="server-ping pixel" data-tooltip="Pinging..."></div>
@@ -145,30 +127,6 @@
 
 	updateServerStatus();
 	setInterval(updateServerStatus, 5000);
-</script>
-<script>
-	function createCountdown(countdown, end) {
-		function updateCountdown() {
-			const diff = (end - Date.now()) / 1000;
-			if (diff < 0) {
-				countdown.innerHTML = 'Worauf wartest du noch?';
-				return;
-			}
-			const seconds = Math.floor(diff % 60);
-			const minutes = Math.floor((diff / 60) % 60);
-			const hours = Math.floor((diff / 3600) % 100);
-
-			console.debug(hours, minutes, seconds);
-
-			countdown.innerHTML = `Nur noch <code>${hours}h ${minutes}m ${seconds}s</code>!`;
-		}
-		updateCountdown();
-		setInterval(updateCountdown, 1000);
-	}
-	createCountdown(
-		document.getElementById('countdown'),
-		new Date('2021-10-16T00:00:00+02:00')
-	);
 </script>
 </body>
 </html>
