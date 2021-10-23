@@ -143,34 +143,6 @@ ul {
 
 /* ============ Text styles============ */
 
-i {
-	font-style: italic;
-}
-
-p a {
-	font-style: italic;
-	color: #f0f0f0;
-}
-
-h1 {
-	text-align: center;
-	font-size: larger;
-}
-
-h2 {
-	color: #f0f0f0;
-}
-
-h3 {
-	color: #a0a0a0;
-}
-
-code {
-	color: white;
-	background-color: rgba(0,0,0,0.6);
-	box-shadow: 0 0 0.2em 0.2em rgba(0,0,0,0.6);
-}
-
 
 figure {
 	margin: 1em 0;
@@ -199,6 +171,10 @@ figure figcaption {
 	text-align: center;
 }
 
+.listing figcaption h2 {
+	margin-bottom: 0;
+}
+
 a.external::after {
 	display: inline-block;
 	content: url('/assets/link_icon_fresh.png');
@@ -207,6 +183,38 @@ a.external::after {
 	margin-top: 3px;
 	position: absolute;
 	filter: drop-shadow(0px 0px 1px black);
+}
+
+i {
+	font-style: italic;
+}
+
+p a {
+	font-style: italic;
+	color: #f0f0f0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-style: normal;
+}
+
+h1 {
+	text-align: center;
+	font-size: larger;
+}
+
+h2 {
+	color: #f0f0f0;
+}
+
+h3 {
+	color: #a0a0a0;
+}
+
+code {
+	color: white;
+	background-color: rgba(0,0,0,0.6);
+	box-shadow: 0 0 0.2em 0.2em rgba(0,0,0,0.6);
 }
 
 /* ============ Minecraft UI Elements ============ */
