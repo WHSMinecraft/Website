@@ -173,6 +173,7 @@ figure figcaption {
 
 .listing figcaption h2 {
 	margin-bottom: 0;
+	display: inline-block;
 }
 
 a.external::after {
