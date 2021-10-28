@@ -43,10 +43,10 @@ publish:
 	cp -r ${SRC_FILES} ${DOC_ROOT}
 
 lint:
-	npx eslint --ignore-path .gitignore **/*.js
+	npx eslint --ignore-path .gitignore --ext .js,.html,.mustache .
 
 lint-fix:
-	npx eslint --ignore-path .gitignore **/*.js --fix
+	npx eslint --ignore-path .gitignore --ext .js,.html,.mustache . --fix
 
 clean:
 	@echo Deleting generated HTMLs...
