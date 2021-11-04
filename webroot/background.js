@@ -1,26 +1,19 @@
 function getBlockComp(i, total) {
-	let pumpkin = i / (total - 1);
-
-	pumpkin = Math.exp(-pumpkin);
-	pumpkin -= (i / (total*2));
-	if (pumpkin < 0)
-		pumpkin = 0;
-	let sand = 1 - pumpkin;
-	pumpkin = Math.floor(25 * pumpkin);
-	sand = Math.floor(25 * sand);
-
-	const comp = [
-		...Array(pumpkin).fill(['carved_pumpkin', 'pumpkin_side']).flat(),
-		...Array(sand).fill('soul_sand')
-	];
-	if (i === total - 1)
-		return ['cracked_polished_blackstone_bricks'];
+	if (i === 0)
+		return ['grass_block_side'];
+	if (i === 1)
+		return ['dirt'];
+	if (i === 2)
+		return ['dirt', 'stone'];
+	if (i === 3)
+		return ['dirt', 'stone', 'stone', 'stone', 'stone', 'stone', 'stone'];
 	if (i === total - 2)
-		return comp.map((e, i) => i%2 ? e : 'cracked_polished_blackstone_bricks');
-	if (i === total - 3)
-		return comp.map((e, i) => i%4 ? e : 'cracked_polished_blackstone_bricks');
+		return ['stone', 'bedrock'];
+	if (i === total - 1)
+		return ['bedrock'];
 
-	return comp;
+
+	return [...Array(40).fill('stone'), 'coal_ore', 'coal_ore', 'gold_ore', 'emerald_ore', 'diamond_ore'];
 }
 
 function setBackground() {
