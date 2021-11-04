@@ -23,9 +23,9 @@ Date:	1.11.2021
 <section>
 <figure>
 <div class="listing">
-	<img style="max-width: 5em" src="/content/parkour_spiral_2/creeper_lamp.png">
-	<img style="max-width: 5em" src="/content/parkour_spiral_2/tnt_lamp.png">
-	<img style="max-width: 5em" src="/content/parkour_spiral_2/charged_creeper_lamp.png">
+	<img style="max-height: 5em" src="/content/parkour_spiral_2/creeper_lamp.png">
+	<img style="max-height: 5em" src="/content/parkour_spiral_2/tnt_lamp.png">
+	<img style="max-height: 5em" src="/content/parkour_spiral_2/charged_creeper_lamp.png">
 </div>
 <figcaption>Wer an erster, zweiter oder dritter Stelle im Ranking steht, hat eine Chance auf eine dieser Lampen!</figcaption>
 </figure>
