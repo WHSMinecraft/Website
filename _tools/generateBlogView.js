@@ -36,7 +36,7 @@ function parseData(path) {
 		}
 		if (inMeta && line) {
 			const key = line.split(':')[0].trim().toLowerCase();
-			const value = line.split(':')[1].trim();
+			const value = line.split(':').slice(1).join(':').trim();
 			data[key] = value;
 			continue;
 		}
