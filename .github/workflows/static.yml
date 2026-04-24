@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:  # ← lets you trigger manually from the Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -22,15 +22,15 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: #sudo apt-get install -y whatever-you-need  # adapt as needed
+        run: npm install
 
       - name: Build
-        run: make  # ← your existing build command, change target if needed
+        run: make
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./webroot  # ← change to wherever `make` puts the output
+          path: ./webroot
 
   deploy:
     needs: build
