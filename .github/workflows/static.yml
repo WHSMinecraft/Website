@@ -27,9 +27,12 @@ jobs:
       - name: Build
         run: make
 
-      - name: Inject base tag # the original website lived under "/", but pages forces "/<repo-name>", breaking most links. So we inject this name into the HTML base tag.
+      - name: Fix absolute paths
         run: |
-          find ./webroot -name "*.html" -exec sed -i 's|<head>|<head><base href="/Website/">|' {} +
+          REPO=${{ github.event.repository.name }}
+          find ./webroot -name "*.html" -exec sed -i 's|href="/|href="/$REPO/|g' {} +
+          find ./webroot -name "*.html" -exec sed -i 's|src="/|src="/$REPO/|g' {} +
+          find ./webroot -name "*.css" -exec sed -i 's|url(/|url(/$REPO/|g' {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
