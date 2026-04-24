@@ -33,6 +33,7 @@ jobs:
           find ./webroot -name "*.html" -exec sed -i "s|href=\"/|href=\"/$REPO/|g" {} +
           find ./webroot -name "*.html" -exec sed -i "s|src=\"/|src=\"/$REPO/|g" {} +
           find ./webroot -name "*.css" -exec sed -i "s|url(/|url(/$REPO/|g" {} +
+          find ./webroot -name "*.js" -exec sed -i "s|`/assets/block_textures/|`/$REPO/assets/block_textures/|g" {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
